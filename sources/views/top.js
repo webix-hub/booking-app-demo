@@ -1,8 +1,7 @@
 import {JetView} from "webix-jet";
-import {FlightSelector} from "views/flightselector";
-import {SpecialOffers} from "views/specialoffers";
+import FlightSelector from "views/flightselector";
+import SpecialOffers from "views/specialoffers";
 import LanguagesPopup from "views/lang";
-import {cities} from "models/cities";
 
 export default class TopView extends JetView{
 	config(){
@@ -22,7 +21,12 @@ export default class TopView extends JetView{
 							{},
 							{ view:"icon", width:40, icon:"info-circle" },
 							{ view:"icon", width:40, icon:"comments" },
-							{ view:"icon", width:40, icon:"cog", popup:LanguagesPopup }
+							{
+								view:"icon", width:40, icon:"cog",
+								click:function(){
+									this.$scope.languages.showLangs(this.$view);
+								}
+							}
 						]
 					},
 					{
@@ -38,21 +42,6 @@ export default class TopView extends JetView{
 		};
 	}
 	init(){
-		// webix.ui({
-		// 	id:"cities",
-		// 	view:"suggest",
-		// 	body:{
-		// 		view:"list",
-		// 		yCount:5,
-		// 		scroll:true,
-		// 		data:cities
-		// 	}
-		// });
-		// this.$$("radio1").attachEvent("onChange", function(newv){
-		// 	if(newv == 2)
-		// 	 	$$("datepicker2").show();
-		// 	else
-		// 	  	$$("datepicker2").hide();
-		// });
+		this.languages = this.ui(LanguagesPopup);
 	}
 }

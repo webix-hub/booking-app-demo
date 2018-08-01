@@ -3,7 +3,7 @@ import SpOffersData from "views/spoffersdata";
 import RegularOffers from "views/regular";
 import FlightInfo from "views/flightinfo";
 
-export class SpecialOffers extends JetView {
+export default class SpecialOffers extends JetView {
 	config(){
 		return {
 			gravity:3,

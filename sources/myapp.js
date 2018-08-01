@@ -16,5 +16,9 @@ export default class MyApp extends JetApp{
 }
 
 if (!BUILD_AS_MODULE){
-	webix.ready(() => new MyApp().render() );
+	webix.ready(() => {
+		if (!webix.env.touch && webix.ui.scrollSize)
+			webix.CustomScroll.init();
+		new MyApp().render();
+	});
 }

@@ -1,0 +1,20 @@
+.transparent{
+    background-color: transparent;
+}
+.main_title{
+    font-size: 19px;
+    line-height: 48px;
+}
+
+a.check_flight{
+    color:  #367ddc;
+}
+.webix_row_select a.check_flight{
+    color:  #fff;
+}
+.blue_row{
+    background-color: #cbdeeb !important;
+}
+.blue_row .webixtype_form{
+    font-size: 18px;
+}

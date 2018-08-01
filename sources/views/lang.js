@@ -25,4 +25,7 @@ export default class LanguagesPopup extends JetView {
 			}
 		};
 	}
+	showLangs(pos){
+		this.getRoot().show(pos);
+	}
 }
