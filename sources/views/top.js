@@ -12,11 +12,10 @@ export default class TopView extends JetView{
 				rows:[
 					{
 						view:"toolbar",
-						height:55,
 						elements:[
 							{
 								view:"label",
-								template:"<span class='main_title'>Webix Airlines Manager</span>"
+								template:"Webix Airlines Manager"
 							},
 							{},
 							{ view:"icon", width:40, icon:"info-circle" },
@@ -30,7 +29,6 @@ export default class TopView extends JetView{
 						]
 					},
 					{
-						autoheight:true,
 						type:"wide",
 						cols:[
 							FlightSelector,

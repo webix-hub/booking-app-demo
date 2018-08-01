@@ -18,16 +18,15 @@ export default class SpecialOffers extends JetView {
 						{ id:"flightInfo", value:"Flight Info", width:150 }
 					]
 				},
-			  	{
+				{
 					view:"multiview",
-					localId:"multiview",
-			   		cells:[
-				 		{ id:"sOffers", $subview:SpOffersData },
+					cells:[
+						{ id:"sOffers", $subview:SpOffersData },
 						{ id:"regular", $subview:RegularOffers },
 						{ id:"flightInfo", $subview:FlightInfo }
-			   		]
-			  	}
+					]
+				}
 			]
-		}
-	};
+		};
+	}
 }

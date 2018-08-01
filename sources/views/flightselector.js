@@ -20,7 +20,8 @@ export default class FlightSelector extends JetView {
 					body:Hotels
 				},
 				{
-					header:"Cars", collapsed:true,
+					header:"Cars",
+					collapsed:true,
 					body:Cars
 				},
 				{
@@ -28,6 +29,13 @@ export default class FlightSelector extends JetView {
 					css:"registration",
 					collapsed:true,
 					body:Registration
+				},
+				{
+					header:"Special offers",
+					collapsed:true,
+					body:{
+						template:"Something here soon"
+					}
 				},
 				{}
 			]

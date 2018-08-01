@@ -4,8 +4,7 @@ export default class LanguagesPopup extends JetView {
 	config(){
 		return {
 			view:"popup",
-			head:false,
-			width: 100,
+			width:100,
 			body:{
 				view:"list",
 				scroll:false,

@@ -25,9 +25,9 @@ export default class Cars extends JetView {
 							cols:[
 								{
 									view:"datepicker", label:"I'm picking up the car on",
-									labelPosition:"top", value:new Date(), format:"%d  %M %Y"
+									labelPosition:"top", value:new Date(), format:"%d %M %Y"
 								},
-								{width:20},
+								{ width:20 },
 								{
 									view:"richselect", label:"&nbsp;", labelPosition:"top",
 									value:"09", options:hours, width:75
@@ -42,7 +42,7 @@ export default class Cars extends JetView {
 							cols:[
 								{
 									view:"datepicker", label:"I'm returning the car on",
-									labelPosition:"top", value:new Date(), format:"%d  %M %Y"
+									labelPosition:"top", value:new Date(), format:"%d %M %Y"
 								},
 								{width:20},
 								{
@@ -60,14 +60,13 @@ export default class Cars extends JetView {
 				},
 				{
 					padding:20,
-					css:"blue_row",
 					rows:[
 						{
 							view:"button", type:"form",
 							value:"Search", align:"center",
-							css:"blue_row", height:50
+							height:50
 						},
-						{ css:"blue_row" }
+						{}
 					]
 				}
 			]
