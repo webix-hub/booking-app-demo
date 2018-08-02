@@ -1,7 +1,4 @@
-import {JetView} from "webix-jet";
-import SpOffersData from "views/spoffersdata";
-import RegularOffers from "views/regular";
-import FlightInfo from "views/flightinfo";
+import {JetView, plugins} from "webix-jet";
 
 export default class SpecialOffers extends JetView {
 	config(){
@@ -10,23 +7,23 @@ export default class SpecialOffers extends JetView {
 			type:"clean",
 			rows:[
 				{
-					view:"tabbar",
-					multiview:true,
-					options:[
-						{ id:"sOffers", value:"Special offers", width:150 },
-						{ id:"regular", value:"Regular", width:150 },
-						{ id:"flightInfo", value:"Flight Info", width:150 }
+					view:"toolbar", cols:[
+						{},
+						{
+							view:"segmented", localId:"offers",
+							options:[
+								{ id:"spoffersdata", value:"Special offers" },
+								{ id:"regular", value:"Regular" },
+								{ id:"flightinfo", value:"Flight Info" }
+							]
+						}
 					]
 				},
-				{
-					view:"multiview",
-					cells:[
-						{ id:"sOffers", $subview:SpOffersData },
-						{ id:"regular", $subview:RegularOffers },
-						{ id:"flightInfo", $subview:FlightInfo }
-					]
-				}
+				{ $subview:true }
 			]
 		};
+	}
+	init(){
+		this.use(plugins.Menu,"offers");
 	}
 }
