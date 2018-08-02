@@ -5,7 +5,7 @@ export default class Registration extends JetView {
 		return {
 			rows:[
 				{
-					view:"form",
+					view:"form", elementsConfig:{ labelAlign:"right", labelWidth:140 },
 					elements:[
 						{ view:"text", label:"First Name", placeholder:"Matthew" },
 						{ view:"text", label:"Last Name", placeholder:"Clark" },
@@ -18,18 +18,10 @@ export default class Registration extends JetView {
 						{
 							view:"text", label:"Confirm Password",
 							type:"password", placeholder:"********"
-						}
-					],
-					elementsConfig:{ labelAlign:"left", labelWidth:140 }
-				},
-				{
-					padding:20,
-					rows:[
+						},
 						{
 							view:"button", type:"form", value:"Register",
-							align:"center", height:50
-						},
-						{}
+						}
 					]
 				}
 			]

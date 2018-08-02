@@ -11,11 +11,11 @@ export default class FlightInfo extends JetView {
 					view:"datatable",
 					select:true,
 					columns:[
-						{ id:"from", header:"From", width:150, sort:"string" },
-						{ id:"to", header:"To", width:150, sort:"string" },
-						{ id:"depart", header:"Depart", width:110, sort:"int" },
-						{ id:"arrive", header:"Arrive", width:110, sort:"int" },
-						{ id:"status", header:"Status", fillspace:true, sort:"string" }
+						{ id:"from", header:"From", fillspace:1, sort:"string" },
+						{ id:"to", header:"To", fillspace:1, sort:"string" },
+						{ id:"depart", header:"Depart", fillspace:1, sort:"int" },
+						{ id:"arrive", header:"Arrive", fillspace:1, sort:"int" },
+						{ id:"status", header:"Status", fillspace:1, sort:"string" }
 					]
 				}
 			]

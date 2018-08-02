@@ -15,58 +15,50 @@ export default class Cars extends JetView {
 		return {
 			rows:[
 				{
-					view:"form",
+					view:"form", elementsConfig:{ labelAlign:"right", labelWidth:85 },
 					elements:[
 						{
-							view:"text", label:"Where", labelPosition:"top",
+							view:"text", label:"Where",
 							placeholder:"Location e.g. country, city"
 						},
 						{
 							cols:[
 								{
-									view:"datepicker", label:"I'm picking up the car on",
-									labelPosition:"top", value:new Date(), format:"%d %M %Y"
+									view:"datepicker", label:"Pick up car",
+									value:new Date(), format:"%d %M %Y"
 								},
-								{ width:20 },
+								{ width:5 },
 								{
-									view:"richselect", label:"&nbsp;", labelPosition:"top",
-									value:"09", options:hours, width:75
+									view:"richselect",
+									value:"09", options:hours, width:70
 								},
 								{
-									view:"richselect", label:"&nbsp;", labelPosition:"top",
-									value:"00", options:minutes, width:75
+									view:"richselect",
+									value:"00", options:minutes, width:70
 								}
 							]
 						},
 						{
 							cols:[
 								{
-									view:"datepicker", label:"I'm returning the car on",
-									labelPosition:"top", value:new Date(), format:"%d %M %Y"
+									view:"datepicker", label:"Return car",
+									value:new Date(), format:"%d %M %Y"
 								},
-								{width:20},
+								{ width:5 },
 								{
-									view:"richselect", label:"&nbsp;", labelPosition:"top",
-									value:"09", options:hours, width:75
+									view:"richselect",
+									value:"09", options:hours, width:70
 								},
 								{
-									view:"richselect", label:"&nbsp;", labelPosition:"top",
-									value:"00", options:minutes, width:75
+									view:"richselect",
+									value:"00", options:minutes, width:70
 								}
 							]
-						}
-					],
-					elementsConfig:{ labelAlign:"left" }
-				},
-				{
-					padding:20,
-					rows:[
+						},
 						{
 							view:"button", type:"form",
-							value:"Search", align:"center",
-							height:50
-						},
-						{}
+							value:"Search"
+						}
 					]
 				}
 			]
