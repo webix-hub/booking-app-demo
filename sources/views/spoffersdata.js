@@ -3,37 +3,70 @@ import {offers} from "models/offers";
 
 export default class SpOffersData extends JetView {
 	config(){
+		webix.locale.pager = {
+			next: "Next >", // the next button
+			prev: "< Previous"  // the previous button
+		};
 		return {
-			view:"datatable",
-			select:true,
-			columns:[
-				{ id:"id", header:"#", width:40},
-				{ id:"direction", header:"Direction", fillspace:true},
+			rows:[
 				{
-					id:"date", header:"Date", width:150, sort:"date",
-					format:webix.i18n.longDateFormatStr
+					view:"datatable",
+					select:true,
+					pager:"pager",
+					columns:[
+						{ id:"id", header:"#", width:60, sort:"int" },
+						{ id:"direction", header:"Direction", fillspace:5 },
+						{
+							id:"date", header:"Date", fillspace:3, sort:"date",
+							format:webix.i18n.longDateFormatStr
+						},
+						{
+							id:"price", header:"Price", sort:"int", fillspace:2,
+							format:webix.i18n.priceFormat
+						},
+						{
+							id:"save", header:"You save", sort:"int", fillspace:2,
+							format:webix.i18n.priceFormat
+						},
+						{ id:"places", header:"Tickets", sort:"int", fillspace:1 },
+						{
+							id:"status", header:"Status", sort:"text", fillspace:2,
+							template: obj => {
+								let st = "";
+								if (obj.status === "Open")
+									st = "open";
+								else if (obj.status === "Last deals")
+									st = "last";
+								else
+									st = "soon";
+								return `<span class="${st}">&#9679;&nbsp;&nbsp;${obj.status}`;
+							}
+						},
+						{
+							id:"book", header:"Booking",
+							template: obj => {
+								return "<a href='javascript:void(0)' class='check_flight'>Book now</a>"
+							}
+						}
+					],
+					onClick:{
+						"check_flight":() => false
+					}
 				},
 				{
-					id:"price", header:"Price", width:95, sort:"int",
-					format:webix.i18n.priceFormat
-				},
-				{
-					id:"save", header:"You save", width:95, sort:"int",
-					format:webix.i18n.priceFormat
-				},
-				{ id:"places", header:"Tickets", width:65, sort:"int"},
-				{
-					//судя по коду тут пытались кнопку вставить, но что-то пошло не так
-					id:"book", header:"Booking", css:"webix_el_button", width:100,
-					template:"<a href='javascript:void(0)' class='check_flight'>Book now</a>"
+					cols:[
+						{},
+						{
+							view:"pager", id:"pager", size:24,
+							template:"{common.prev()} {common.pages()} {common.next()}"
+						},
+						{}
+					]
 				}
-			],
-			onClick:{
-				"check_flight":() => false
-			}
+			]
 		};
 	}
 	init(view){
-		view.parse(offers);
+		view.queryView({view:"datatable"}).parse(offers);
 	}
 }

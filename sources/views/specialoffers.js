@@ -8,13 +8,15 @@ export default class SpecialOffers extends JetView {
 			rows:[
 				{
 					view:"toolbar", cols:[
+						{ view:"label", template:"Payments" },
 						{},
 						{
 							view:"segmented", localId:"offers",
+							width:300,
 							options:[
-								{ id:"spoffersdata", value:"Special offers" },
+								{ id:"spoffersdata", value:"Offers" },
 								{ id:"regular", value:"Regular" },
-								{ id:"flightinfo", value:"Flight Info" }
+								{ id:"flightinfo", value:"Info" }
 							]
 						}
 					]

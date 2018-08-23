@@ -9,6 +9,7 @@ export default class FlightSelector extends JetView {
 		return {
 			width:400,
 			multi:false,
+			margin:1,
 			rows:[
 				{
 					header:"Book a Flight",
