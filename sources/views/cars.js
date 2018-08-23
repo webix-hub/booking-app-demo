@@ -2,6 +2,8 @@ import {JetView} from "webix-jet";
 
 export default class Cars extends JetView {
 	config(){
+
+		const _ = this.app.getService("locale")._;
 		
 		let hours = [];
 		for (let i = 0; i < 24; i++){
@@ -18,13 +20,13 @@ export default class Cars extends JetView {
 					view:"form", elementsConfig:{ labelAlign:"right", labelWidth:85 },
 					elements:[
 						{
-							view:"text", label:"Where",
-							placeholder:"Location e.g. country, city"
+							view:"text", label:_("Where"),
+							placeholder:_("Location e.g. country, city")
 						},
 						{
 							cols:[
 								{
-									view:"datepicker", label:"Pick up car",
+									view:"datepicker", label:_("Pick up car"),
 									value:new Date(), format:"%d %M %Y"
 								},
 								{ width:5 },
@@ -41,7 +43,7 @@ export default class Cars extends JetView {
 						{
 							cols:[
 								{
-									view:"datepicker", label:"Return car",
+									view:"datepicker", label:_("Return car"),
 									value:new Date(), format:"%d %M %Y"
 								},
 								{ width:5 },
@@ -57,7 +59,7 @@ export default class Cars extends JetView {
 						},
 						{
 							view:"button", type:"form",
-							value:"Search"
+							value:_("Search")
 						}
 					]
 				}

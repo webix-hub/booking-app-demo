@@ -1,36 +1,35 @@
 import {JetView} from "webix-jet";
 import {offers} from "models/offers";
+// import "webix/pager";
 
 export default class SpOffersData extends JetView {
 	config(){
-		webix.locale.pager = {
-			next: "Next >", // the next button
-			prev: "< Previous"  // the previous button
-		};
+		const _ = this.app.getService("locale")._;
 		return {
 			rows:[
 				{
 					view:"datatable",
+					localId:"special",
 					select:true,
-					pager:"pager",
+					pager:"special:pager",
 					columns:[
 						{ id:"id", header:"#", width:60, sort:"int" },
-						{ id:"direction", header:"Direction", fillspace:5 },
+						{ id:"direction", header:_("Direction"), fillspace:5 },
 						{
-							id:"date", header:"Date", fillspace:3, sort:"date",
+							id:"date", header:_("Date"), fillspace:3, sort:"date",
 							format:webix.i18n.longDateFormatStr
 						},
 						{
-							id:"price", header:"Price", sort:"int", fillspace:2,
+							id:"price", header:_("Price"), sort:"int", fillspace:2,
 							format:webix.i18n.priceFormat
 						},
 						{
-							id:"save", header:"You save", sort:"int", fillspace:2,
+							id:"save", header:_("You save"), sort:"int", fillspace:2,
 							format:webix.i18n.priceFormat
 						},
-						{ id:"places", header:"Tickets", sort:"int", fillspace:1 },
+						{ id:"places", header:_("Tickets"), sort:"int", fillspace:1 },
 						{
-							id:"status", header:"Status", sort:"text", fillspace:2,
+							id:"status", header:_("Status"), sort:"text", fillspace:2,
 							template: obj => {
 								let st = "";
 								if (obj.status === "Open")
@@ -43,7 +42,7 @@ export default class SpOffersData extends JetView {
 							}
 						},
 						{
-							id:"book", header:"Booking",
+							id:"book", header:_("Booking"),
 							template: obj => {
 								return "<a href='javascript:void(0)' class='check_flight'>Book now</a>"
 							}
@@ -57,7 +56,7 @@ export default class SpOffersData extends JetView {
 					cols:[
 						{},
 						{
-							view:"pager", id:"pager", size:24,
+							view:"pager", id:"special:pager", size:24,
 							template:"{common.prev()} {common.pages()} {common.next()}"
 						},
 						{}
@@ -66,7 +65,7 @@ export default class SpOffersData extends JetView {
 			]
 		};
 	}
-	init(view){
-		view.queryView({view:"datatable"}).parse(offers);
+	init(){
+		this.$$("special").parse(offers);
 	}
 }

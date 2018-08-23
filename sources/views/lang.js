@@ -7,24 +7,32 @@ export default class LanguagesPopup extends JetView {
 			width:100,
 			body:{
 				view:"list",
+				localId:"lang",
 				scroll:false,
 				yCount:4,
 				select:true,
 				borderless:true,
 				template:"#lang#",
 				data:[
-					{ id:1, lang:"English" },
-					{ id:2, lang:"French" },
-					{ id:3, lang:"German" },
-					{ id:4, lang:"Russian" }
+					{ id:"en", lang:"English" },
+					{ id:"kr", lang:"Korean" },
+					{ id:"de", lang:"German" },
+					{ id:"ru", lang:"Russian" }
 				],
 				on:{
-					onAfterSelect:() => this.getRoot().hide()
+					onAfterSelect:id => {
+						this.toggleLanguage(id);
+						this.getRoot().hide();
+					}
 				}
 			}
 		};
 	}
 	showLangs(pos){
 		this.getRoot().show(pos);
+	}
+	toggleLanguage(value){
+		const langs = this.app.getService("locale");
+        langs.setLang(value);
 	}
 }
