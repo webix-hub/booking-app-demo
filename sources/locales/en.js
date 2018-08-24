@@ -44,12 +44,15 @@ export default {
 	"Next":"Next",
 	"Flight number":"Flight number",
 	"Enter flight No.":"Enter flight No.",
-	"-- or --":"-- or --",
 	"Departs":"Departs",
 	"Arrives":"Arrives",
 	"Comments":"Comments",
 	"Number":"Number",
 	"Flight No.":"Flight No.",
 	"Landed":"Landed",
-	"On Time":"On Time"
+	"On Time":"On Time",
+	"Book now":"Book now",
+	"Last deals":"Last deals",
+	"Open":"Open",
+	"Available soon":"Available soon"
 }

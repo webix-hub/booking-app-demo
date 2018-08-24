@@ -1,18 +1,24 @@
-a.check_flight{
-    color:#367ddc;
-}
+/* statuses */
 .open{
-	color:rgb(9, 202, 128);
+	color:#55CD97;
 }
-.soon{
-	color:rgb(4, 164, 228);
+.soon, .ontime{
+	color:#1CA1C1;
 }
-.last{
-	color:rgb(248, 40, 12);
+.last, .unread{
+	color:#FF5C4C;
 }
 .landed{
 	color:rgb(243, 166, 1);
 }
-.ontime{
-	color:rgb(4, 164, 228);
+/* notifications list */
+.notifications .webix_list_item{
+	line-height:20px;
+	padding:10px;
+}
+.notifications .webix_list_item .m_title{
+	font-weight: 500;
+}
+.notifications .webix_list_item .message{
+	display:block;
 }

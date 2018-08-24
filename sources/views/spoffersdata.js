@@ -38,14 +38,12 @@ export default class SpOffersData extends JetView {
 									st = "last";
 								else
 									st = "soon";
-								return `<span class="${st}">&#9679;&nbsp;&nbsp;${obj.status}`;
+								return `<span class="${st}">&#9679;&nbsp;&nbsp;${_(obj.status)}`;
 							}
 						},
 						{
 							id:"book", header:_("Booking"),
-							template: obj => {
-								return "<a href='javascript:void(0)' class='check_flight'>Book now</a>"
-							}
+							template: () => `<a href='javascript:void(0)'>${_("Book now")}</a>`
 						}
 					],
 					onClick:{

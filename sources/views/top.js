@@ -2,6 +2,7 @@ import {JetView} from "webix-jet";
 import FlightSelector from "views/flightselector";
 import SpecialOffers from "views/specialoffers";
 import LanguagesPopup from "views/lang";
+import NotificationView from "views/notifications";
 
 export default class TopView extends JetView{
 	config(){
@@ -16,9 +17,14 @@ export default class TopView extends JetView{
 						},
 						{},
 						{ view:"icon", icon:"information" },
-						{ view:"icon", icon:"bell" },
 						{
-							view:"icon", icon:"settings",
+							view:"icon", icon:"bell",
+							click:function(){
+								this.$scope.notifications.showLatest(this.$view);
+							}
+						},
+						{
+							view:"icon", icon:"earth",
 							click:function(){
 								this.$scope.languages.showLangs(this.$view);
 							}
@@ -37,5 +43,6 @@ export default class TopView extends JetView{
 	}
 	init(){
 		this.languages = this.ui(LanguagesPopup);
+		this.notifications = this.ui(NotificationView);
 	}
 }

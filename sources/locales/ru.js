@@ -46,5 +46,9 @@ export default {
 	"Number":"Номер",
 	"Flight No.":"Номер",
 	"Landed":"Прибыл",
-	"On Time":"По расписанию"
+	"On Time":"По расписанию",
+	"Book now":"Купить",
+	"Last deals":"Последний шанс",
+	"Open":"Доступна",
+	"Available soon":"Скоро доступна"
 }
