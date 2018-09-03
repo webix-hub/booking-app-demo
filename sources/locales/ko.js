@@ -54,5 +54,13 @@ export default {
 	"Book now":"지금 예약",
 	"Last deals":"마지막 거래",
 	"Open":"열다",
-	"Available soon":"곧 이용 가능"
+	"Available soon":"곧 이용 가능",
+	"Fly to Paris!":"파리로 날아라!",
+	"Dear Jane, we are happy to share discounts for flights: only on September 24, 2018 all flights to Paris and other towns of France...":"서윤 에게, 항공편 할인 혜택을드립니다 : 2018 년 9 월 24 일에 파리와 프랑스의 다른 도시로가는 모든 항공편 ...",
+	"Search Improved":"검색 향상",
+	"Dear Jane! Following the latest updates of the SeekMeEverywhere engines, your search has become more reliable and convenient! No...":"서윤 에게! SeekMeEverywhere 엔진의 최신 업데이트에 이어 검색이 더욱 안정적이고 편리하게되었습니다! 아니...",
+	"Way Out West: festivals!":"Way Out West: 축제!",
+	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"서윤 에게, 고텐 부르크 (Gothenburg)와 스톡홀름 (Stockholm) 행 항공편을 할인 된 가격으로 이용하실 수 있습니다. 2018 년 7 월 25 일부터 8 월 20 일까지 9.99 달러로 스웨덴으로 비행 ...",
+	"Latest notifications":"최신 알림",
+	"Change the language":"언어 변경"
 }

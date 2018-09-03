@@ -3,6 +3,7 @@ import {notifications} from "models/notifications";
 
 export default class NotificationView extends JetView {
 	config(){
+		const _ = this.app.getService("locale")._;
 		return {
 			view:"popup",
 			body:{
@@ -12,8 +13,9 @@ export default class NotificationView extends JetView {
 				width:250, height:350,
 				template:(obj,common) => {
 					return (!obj.read ? common.itemNew() : "") +
-						"<span class='m_title'>" + obj.title + "</span>" +
-						"<span class='message'>" + obj.message + "</span>";
+						"<span class='m_title" + (!obj.read ? " unread" :"") + "'>"
+						+ _(obj.title) + "</span>" +
+						"<span class='message'>" + _(obj.message) + "</span>";
 				},
 				type:{
 					itemNew: () => "<span class='webix_icon mdi mdi-alert-decagram unread'></span>",

@@ -54,5 +54,13 @@ export default {
 	"Book now":"Buchen Sie jetzt",
 	"Last deals":"Letzte Angebote",
 	"Open":"Öffnen",
-	"Available soon":"Bald erhältlich"
+	"Available soon":"Bald erhältlich",
+	"Fly to Paris!":"Fliegen Sie nach Paris!",
+	"Dear Jane, we are happy to share discounts for flights: only on September 24, 2018 all flights to Paris and other towns of France...":"Liebe Jane, wir freuen uns, Rabatte für Flüge zu teilen: nur am 24. September 2018 alle Flüge nach Paris und anderen Städten Frankreichs ...",
+	"Search Improved":"Suche verbessert",
+	"Dear Jane! Following the latest updates of the SeekMeEverywhere engines, your search has become more reliable and convenient! No...":"Liebe Jane! Nach den neuesten Updates der SeekMeEverywhere-Engines ist Ihre Suche zuverlässiger und bequemer geworden! Je...",
+	"Way Out West: festivals!":"Way Out West: Feste!",
+	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Liebe Jane, Flüge nach Göteborg und Stockholm sind mit Rabatten erhältlich. Vom 25. Juli bis 20. August 2018 fliegen Sie für 9,99 nach Schweden...",
+	"Latest notifications":"Letzte Benachrichtigungen",
+	"Change the language":"die Sprache ändern"
 }

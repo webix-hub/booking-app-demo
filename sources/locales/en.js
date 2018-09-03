@@ -54,5 +54,13 @@ export default {
 	"Book now":"Book now",
 	"Last deals":"Last deals",
 	"Open":"Open",
-	"Available soon":"Available soon"
+	"Available soon":"Available soon",
+	"Fly to Paris!":"Fly to Paris!",
+	"Dear Jane, we are happy to share discounts for flights: only on September 24, 2018 all flights to Paris and other towns of France...":"Dear Jane, we are happy to share discounts for flights: only on September 24, 2018 all flights to Paris and other towns of France...",
+	"Search Improved":"Search Improved",
+	"Dear Jane! Following the latest updates of the SeekMeEverywhere engines, your search has become more reliable and convenient! No...":"Dear Jane! Following the latest updates of the SeekMeEverywhere engines, your search has become more reliable and convenient! No...",
+	"Way Out West: festivals!":"Way Out West: festivals!",
+	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...",
+	"Latest notifications":"Latest notifications",
+	"Change the language":"Change the language"
 }
