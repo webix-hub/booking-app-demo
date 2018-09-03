@@ -55,4 +55,4 @@ export default {
 	"Last deals":"Last deals",
 	"Open":"Open",
 	"Available soon":"Available soon"
-}
+};

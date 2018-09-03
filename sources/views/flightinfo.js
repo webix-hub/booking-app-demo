@@ -1,14 +1,11 @@
 import {JetView} from "webix-jet";
-import FlightForm from "views/flightform";
 import {info} from "models/info";
 
 export default class FlightInfo extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
 		return {
-			rows:[
-				FlightForm,
-				{
+			rows:[{
 					view:"datatable",
 					select:true,
 					columns:[
