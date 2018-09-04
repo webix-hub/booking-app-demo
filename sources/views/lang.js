@@ -26,6 +26,10 @@ export default class LanguagesPopup extends JetView {
 						this.toggleLanguage(id);
 						this.getRoot().hide();
 					}
+				},
+				ready(){
+					const clang = webix.storage.local.get("clang");
+					this.select(clang);
 				}
 			}
 		};
@@ -35,6 +39,10 @@ export default class LanguagesPopup extends JetView {
 	}
 	toggleLanguage(value){
 		const langs = this.app.getService("locale");
-        langs.setLang(value);
+		const clang = langs.getLang();
+		if (value !== clang){
+			webix.storage.local.put("clang",value);
+			langs.setLang(value);
+		}
 	}
 }
