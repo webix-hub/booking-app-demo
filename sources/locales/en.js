@@ -62,5 +62,6 @@ export default {
 	"Way Out West: festivals!":"Way Out West: festivals!",
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...",
 	"Latest notifications":"Latest notifications",
-	"Change the language":"Change the language"
+	"Change the language":"Change the language",
+	"Click to change the theme":"Click to change the theme"
 }

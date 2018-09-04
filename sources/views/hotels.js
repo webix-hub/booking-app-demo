@@ -6,7 +6,7 @@ export default class Hotels extends JetView {
 		return {
 			rows:[
 				{
-					view:"form", elementsConfig:{ labelAlign:"right" },
+					view:"form", elementsConfig:{ labelAlign:"right", labelWidth:100 },
 					elements:[
 						{
 							view:"text", label:_("Where"),

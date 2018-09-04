@@ -62,5 +62,6 @@ export default {
 	"Way Out West: festivals!":"Way Out West: 축제!",
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"서윤 에게, 고텐 부르크 (Gothenburg)와 스톡홀름 (Stockholm) 행 항공편을 할인 된 가격으로 이용하실 수 있습니다. 2018 년 7 월 25 일부터 8 월 20 일까지 9.99 달러로 스웨덴으로 비행 ...",
 	"Latest notifications":"최신 알림",
-	"Change the language":"언어 변경"
+	"Change the language":"언어 변경",
+	"Click to change the theme":"테마를 변경하려면 클릭하십시오"
 }

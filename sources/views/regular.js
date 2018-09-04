@@ -1,5 +1,6 @@
 import {JetView} from "webix-jet";
 import {offers} from "models/offers";
+import "webix/pager";
 
 export default class RegularOffers extends JetView {
 	config(){
@@ -49,7 +50,8 @@ export default class RegularOffers extends JetView {
 					cols:[
 						{},
 						{
-							view:"pager", id:"list:pager", size:24,
+							view:"pager", id:"list:pager",
+							size:24, width:330,
 							template:"{common.prev()} {common.pages()} {common.next()}"
 						},
 						{}

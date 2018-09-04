@@ -17,7 +17,7 @@ export default class Cars extends JetView {
 		return {
 			rows:[
 				{
-					view:"form", elementsConfig:{ labelAlign:"right", labelWidth:85 },
+					view:"form", elementsConfig:{ labelAlign:"right", labelWidth:115 },
 					elements:[
 						{
 							view:"text", label:_("Where"),
@@ -32,11 +32,11 @@ export default class Cars extends JetView {
 								{ width:5 },
 								{
 									view:"richselect",
-									value:"09", options:hours, width:70
+									value:"09", options:hours, width:60
 								},
 								{
 									view:"richselect",
-									value:"00", options:minutes, width:70
+									value:"00", options:minutes, width:60
 								}
 							]
 						},
@@ -49,11 +49,11 @@ export default class Cars extends JetView {
 								{ width:5 },
 								{
 									view:"richselect",
-									value:"09", options:hours, width:70
+									value:"09", options:hours, width:60
 								},
 								{
 									view:"richselect",
-									value:"00", options:minutes, width:70
+									value:"00", options:minutes, width:60
 								}
 							]
 						},

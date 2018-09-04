@@ -19,8 +19,8 @@ export default {
 	"Search":"Поиск",
 	"Cars":"Аренда автомобилей",
 	"Location e.g. country, city":"Страна, город",
-	"Pick up car":"С",
-	"Return car":"По",
+	"Pick up car":"Беру машину",
+	"Return car":"Верну машину",
 	"Register":"Регистрация",
 	"First Name":"Имя",
 	"Last Name":"Фамилия",
@@ -58,5 +58,6 @@ export default {
 	"Search Improved":"Поиск стал лучше",
 	"Dear Jane! Following the latest updates of the SeekMeEverywhere engines, your search has become more reliable and convenient! No...":"Уважаемая Анна! Вслед за обновлениями движков SeekMeEverywhere, мы обновили поиск, и теперь он стал еще более надежным и удобным! Се...",
 	"Way Out West: festivals!":"Way Out West: фестивали!",
-	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Уважаемая Анна, летите в Гетеборг и Стокгольм со скидкой! С 25 июля по 20 августа 2018 билеты в Швецию стоят всего 9.99..."
+	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Уважаемая Анна, летите в Гетеборг и Стокгольм со скидкой! С 25 июля по 20 августа 2018 билеты в Швецию стоят всего 9.99...",
+	"Click to change the theme":"Изменить цветовую схему"
 }

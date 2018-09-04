@@ -20,14 +20,14 @@ export default {
 	"Cars":"Autos",
 	"Location e.g. country, city":"Ort z.B. Land, Stadt",
 	"Pick up car":"Auto abholen",
-	"Return car":"Rückfahrt mit dem Auto",
+	"Return car":"Zurückgeben",
 	"Register":"Registrieren",
 	"First Name":"Vorname",
 	"Last Name":"Familienname",
 	"Email":"Email",
 	"Login":"Anmeldung",
 	"Password":"Passwort",
-	"Confirm Password":"Bestätige das Passwort",
+	"Confirm Password":"Bestätige Passwort",
 	"Special offers":"Sonderangebote",
 	"Flights":"Flüge",
 	"Offers":"Angebote",
@@ -62,5 +62,6 @@ export default {
 	"Way Out West: festivals!":"Way Out West: Feste!",
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Liebe Jane, Flüge nach Göteborg und Stockholm sind mit Rabatten erhältlich. Vom 25. Juli bis 20. August 2018 fliegen Sie für 9,99 nach Schweden...",
 	"Latest notifications":"Letzte Benachrichtigungen",
-	"Change the language":"die Sprache ändern"
+	"Change the language":"Die Sprache ändern",
+	"Click to change the theme":"Klicken Sie, um das Design zu ändern"
 }

@@ -1,6 +1,6 @@
 import {JetView} from "webix-jet";
 import {offers} from "models/offers";
-// import "webix/pager";
+import "webix/pager";
 
 export default class SpOffersData extends JetView {
 	config(){
@@ -54,7 +54,8 @@ export default class SpOffersData extends JetView {
 					cols:[
 						{},
 						{
-							view:"pager", id:"special:pager", size:24,
+							view:"pager", id:"special:pager",
+							size:24, width:330,
 							template:"{common.prev()} {common.pages()} {common.next()}"
 						},
 						{}

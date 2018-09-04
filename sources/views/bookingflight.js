@@ -5,7 +5,7 @@ export default class BookingFlight extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
 		return {
-			view:"form", elementsConfig:{ labelWidth:75, labelAlign:"right" },
+			view:"form", elementsConfig:{ labelWidth:100, labelAlign:"right" },
 			elements:[
 				{
 					view:"radio",

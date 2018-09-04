@@ -46,6 +46,11 @@ export default class SpecialOffers extends JetView {
 	}
 	init(){
 		this.use(plugins.Menu,"offers");
+
+		const ccolor = webix.storage.local.get("theme_color");
+		if (ccolor) this.toggleThemes(ccolor);
+
+		this.on(this.app,"change:theme",color => this.toggleThemes(color));
 	}
 	urlChange(ui,url){
 		const toolbar = ui.queryView({ view:"toolbar" });
@@ -53,5 +58,14 @@ export default class SpecialOffers extends JetView {
 			toolbar.showBatch("search");
 		else
 			toolbar.showBatch("default");
+	}
+	toggleThemes(color){
+		const toolbar = this.getRoot().queryView({ view:"toolbar" });
+		if (color === "dark"){
+			toolbar.define("css","webix_dark");
+		}
+		else {
+			webix.html.removeCss(toolbar.$view,"webix_dark");
+		}
 	}
 }

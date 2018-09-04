@@ -62,5 +62,6 @@ export default {
 	"Way Out West: festivals!":"Way Out West: 節日!",
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"親愛的簡，飛往哥德堡和斯德哥爾摩的航班可享受折扣優惠。從2018年7月25日到8月20日飛往瑞典9.99 ...",
 	"Latest notifications":"最新通知",
-	"Change the language":"改變語言"
+	"Change the language":"改變語言",
+	"Click to change the theme":"單擊以更改主題"
 };

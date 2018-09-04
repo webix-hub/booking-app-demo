@@ -29,7 +29,7 @@ export default class LanguagesPopup extends JetView {
 				},
 				ready(){
 					const clang = webix.storage.local.get("clang");
-					this.select(clang);
+					this.select(clang||"en");
 				}
 			}
 		};
