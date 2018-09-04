@@ -3,6 +3,7 @@ import BookingFlight from "views/bookingflight";
 import Hotels from "views/hotels";
 import Cars from "views/cars";
 import Registration from "views/registration";
+import BestOffers from "views/best";
 		
 export default class FlightSelector extends JetView {
 	config(){
@@ -13,7 +14,12 @@ export default class FlightSelector extends JetView {
 			margin:1,
 			rows:[
 				{
+					header:_("Special offers"),
+					body:BestOffers
+				},
+				{
 					header:_("Book a Flight"),
+					collapsed:true,
 					body:BookingFlight
 				},
 				{
@@ -31,13 +37,6 @@ export default class FlightSelector extends JetView {
 					css:"registration",
 					collapsed:true,
 					body:Registration
-				},
-				{
-					header:_("Special offers"),
-					collapsed:true,
-					body:{
-						template:"Something here soon"
-					}
 				},
 				{}
 			]

@@ -22,3 +22,23 @@
 .notifications .webix_list_item .message{
 	display:block;
 }
+/* deals dataview */
+.deals{
+	background-size:396px 200px !important;
+	background-repeat:no-repeat !important;
+	height:200px;
+}
+.p_title{
+	color:ivory;
+	font-weight:500;
+	font-size:24px;
+	padding:10px 0px 0px 15px;
+}
+.p_message{
+	color:white;
+	font-weight:500;
+	line-height:20px;
+	padding-left: 15px;
+	position: relative;
+	bottom:-130px;
+}
