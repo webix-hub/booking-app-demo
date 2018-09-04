@@ -5,7 +5,8 @@ export default class BookingFlight extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
 		return {
-			view:"form", elementsConfig:{ labelWidth:100, labelAlign:"right" },
+			view:"form",
+			elementsConfig:{ labelWidth:100, labelAlign:"right" },
 			elements:[
 				{
 					view:"radio",
@@ -34,11 +35,11 @@ export default class BookingFlight extends JetView {
 				},
 				{
 					view:"datepicker", label:_("Departure"),
-					value:new Date(), format:"%d  %M %Y"
+					value:new Date(), format:"%d %M %Y"
 				},
 				{
 					view:"datepicker", localId:"datepicker2",
-					label:_("Return"), value:new Date(), format:"%d  %M %Y",
+					label:_("Return"), value:new Date(), format:"%d %M %Y",
 					hidden:true
 				},
 				{
