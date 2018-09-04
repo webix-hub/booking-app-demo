@@ -17,16 +17,42 @@ export default class SpecialOffers extends JetView {
 						{ batch:"default" },
 						{
 							view:"combo", batch:"search",
-							suggest:cities,
-							placeholder:_("Select departure point")
+							id:"depart:combo",
+							placeholder:_("Select departure point"),
+							options:cities,
+							on:{
+								onChange:newv => {
+									if (newv){
+										this.$$("to").enable();
+										this.$$("to").setValue("");
+									}
+								}
+							}							
 						},
 						{
 							view:"combo", batch:"search",
-							suggest:cities, placeholder:_("Select destination")
+							localId:"to", disabled:true,
+							placeholder:_("Select destination"),
+							options:{
+								data:cities,
+								on:{
+									onShow(){
+										let from = $$("depart:combo").getValue();
+										if (from){
+											this.getList().filter(obj => obj.id !== from)
+										}
+									}
+								}
+							}							
 						},
 						{
 							width:100, view:"button", type:"form", batch:"search",
-							value:_("Search"), align:"left"
+							value:_("Search"), align:"left",
+							click:() => {
+								const route = this.getRoot().queryView({ view:"combo" });
+								if (route[0].getValue() && route[1].getValue() )
+									webix.message("searching (to be implemented tomorrow");
+							}
 						},
 						{ width:30 },
 						{

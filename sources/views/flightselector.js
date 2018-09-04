@@ -14,12 +14,7 @@ export default class FlightSelector extends JetView {
 			margin:1,
 			rows:[
 				{
-					header:_("Special offers"),
-					body:BestOffers
-				},
-				{
 					header:_("Book a Flight"),
-					collapsed:true,
 					body:BookingFlight
 				},
 				{
@@ -37,6 +32,11 @@ export default class FlightSelector extends JetView {
 					css:"registration",
 					collapsed:true,
 					body:Registration
+				},
+				{
+					header:_("Special offers"),
+					collapsed:true,
+					body:BestOffers
 				},
 				{}
 			]
