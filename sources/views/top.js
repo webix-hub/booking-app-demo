@@ -1,8 +1,8 @@
 import {JetView} from "webix-jet";
-import FlightSelector from "views/flightselector";
-import SpecialOffers from "views/specialoffers";
+import FlightSelectorView from "views/flightselector";
+import AllFlightsView from "views/allflights";
 import LanguagesPopup from "views/lang";
-import NotificationView from "views/notifications";
+import NotificationsPopup from "views/notifications";
 
 export default class TopView extends JetView{
 	config(){
@@ -12,6 +12,7 @@ export default class TopView extends JetView{
 			rows:[
 				{
 					view:"toolbar",
+					localId:"toolbar",
 					elements:[
 						{
 							view:"label",
@@ -19,29 +20,30 @@ export default class TopView extends JetView{
 						},
 						{},
 						{
-							view:"icon", localId:"themes",
+							view:"icon",
+							localId:"themes",
 							icon:"theme-light-dark",
 							tooltip:_("Click to change the theme"),
-							color:"light",
 							click:function(){
 								let color = this.config.color;
 								color = (color === "light") ? "dark" : "light";
 								webix.storage.local.put("theme_color",color);
-								this.$scope.app.callEvent("change:theme",[color]);
+								this.$scope.app.config.theme = color;
+								this.$scope.app.refresh();
 							}
 						},
 						{
 							view:"icon", icon:"bell",
-							tooltip:_("Latest notifications"),
+							badge:2, tooltip:_("Latest notifications"),
 							click:function(){
-								this.$scope.notifications.showLatest(this.$view);
+								this.$scope.notifications.showPopup(this.$view);
 							}
 						},
 						{
 							view:"icon", icon:"earth",
 							tooltip:_("Change the language"),
 							click:function(){
-								this.$scope.languages.showLangs(this.$view);
+								this.$scope.languages.showPopup(this.$view);
 							}
 						}
 					]
@@ -49,8 +51,7 @@ export default class TopView extends JetView{
 				{
 					type:"space",
 					cols:[
-						FlightSelector,
-						SpecialOffers
+						FlightSelectorView, AllFlightsView
 					]
 				}
 			]
@@ -58,21 +59,17 @@ export default class TopView extends JetView{
 	}
 	init(){
 		this.languages = this.ui(LanguagesPopup);
-		this.notifications = this.ui(NotificationView);
+		this.notifications = this.ui(NotificationsPopup);
 
-		const ccolor = webix.storage.local.get("theme_color");
+		const ccolor = this.app.config.theme;
 		if (ccolor) this.toggleThemes(ccolor);
-
-		this.on(this.app,"change:theme",color => this.toggleThemes(color));
 	}
 	toggleThemes(color){
-		const toolbar = this.getRoot().queryView({ view:"toolbar" });
-		if (color === "dark"){
-			toolbar.define("css","webix_dark");
-		}
-		else {
-			webix.html.removeCss(toolbar.$view,"webix_dark");
-		}
+		const toolbar = this.$$("toolbar").$view;
+		if (color === "dark")
+			webix.html.addCss(toolbar,"webix_dark");
+		else
+			webix.html.removeCss(toolbar,"webix_dark");
 		this.$$("themes").config.color = color;
 	}
 }

@@ -1,102 +1,58 @@
-import {JetView, plugins} from "webix-jet";
-import {getCities} from "models/cities";
+import {JetView} from "webix-jet";
+import {getOffers} from "models/offers";
+import PagerView from "views/pager";
 
-export default class SpecialOffers extends JetView {
+export default class SpecialOffersView extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
-		const cities = getCities();
 		return {
-			gravity:3,
-			type:"clean",
 			rows:[
 				{
-					view:"toolbar",
-					visibleBatch:"default",
-					cols:[
-						{ view:"label", template:_("Flights"), autowidth:true },
-						{ width:30 },
-						{ batch:"default" },
+					view:"datatable",
+					localId:"datatable",
+					select:true,
+					pager:"flight:pager",
+					columns:[
+						{ id:"id", header:"#", width:60, sort:"int" },
+						{ id:"direction", header:_("Direction"), fillspace:5 },
 						{
-							view:"combo", batch:"search",
-							id:"depart:combo",
-							placeholder:_("Select departure point"),
-							options:cities,
-							on:{
-								onChange:newv => {
-									newv ? this.$$("to").enable() : this.$$("to").disable();
-									this.$$("to").setValue("");
-								}
-							}							
+							id:"date", header:_("Date"), fillspace:3, sort:"date",
+							format:webix.i18n.longDateFormatStr
 						},
 						{
-							view:"combo", batch:"search",
-							localId:"to", disabled:true,
-							placeholder:_("Select destination"),
-							options:{
-								data:cities,
-								on:{
-									onShow(){
-										let from = $$("depart:combo").getValue();
-										if (from){
-											this.getList().filter(obj => obj.id !== from)
-										}
-									}
-								}
-							}							
+							id:"price", header:_("Price"), sort:"int", fillspace:2,
+							format:webix.i18n.priceFormat
 						},
 						{
-							width:100, view:"button", type:"form", batch:"search",
-							value:_("Search"), align:"left",
-							click:() => {
-								const id_from = $$("depart:combo").getValue();
-								const id_to = this.$$("to").getValue();
-								if (id_from && id_to){
-									const from = cities[id_from-1].value;
-									const to = cities[id_to-1].value;
-									this.app.callEvent("search:flight",[from,to]);
-								}
+							id:"save", header:_("You save"), sort:"int", fillspace:2,
+							format:webix.i18n.priceFormat
+						},
+						{ id:"places", header:_("Tickets"), sort:"int", fillspace:1 },
+						{
+							id:"status", header:_("Status"), sort:"text", fillspace:2,
+							template:obj => {
+								let st = "";
+								if (obj.status === "Open")
+									st = "open";
 								else
-									this.app.callEvent("search:flight");
+									st = (obj.status === "Last deals") ? "last" : "soon";
+								return `<span class="status ${st}">&#9679;&nbsp;&nbsp;${_(obj.status)}</span>`;
 							}
 						},
-						{ width:30 },
 						{
-							view:"segmented", localId:"offers",
-							width:300,
-							options:[
-								{ id:"spoffersdata", value:_("Offers") },
-								{ id:"regular", value:_("Regular") },
-								{ id:"flightinfo", value:_("Info") }
-							]
+							id:"book", header:_("Booking"),
+							template:() => `<a class="book_flight" href="javascript:void(0)">${_("Book now")}</a>`
 						}
-					]
+					],
+					onClick:{
+						"book_flight":() => false
+					}
 				},
-				{ $subview:true }
+				PagerView
 			]
 		};
 	}
 	init(){
-		this.use(plugins.Menu,"offers");
-
-		const ccolor = webix.storage.local.get("theme_color");
-		if (ccolor) this.toggleThemes(ccolor);
-
-		this.on(this.app,"change:theme",color => this.toggleThemes(color));
-	}
-	urlChange(ui,url){
-		const toolbar = ui.queryView({ view:"toolbar" });
-		if (url[1].page === "flightinfo")
-			toolbar.showBatch("search");
-		else
-			toolbar.showBatch("default");
-	}
-	toggleThemes(color){
-		const toolbar = this.getRoot().queryView({ view:"toolbar" });
-		if (color === "dark"){
-			toolbar.define("css","webix_dark");
-		}
-		else {
-			webix.html.removeCss(toolbar.$view,"webix_dark");
-		}
+		this.$$("datatable").sync(getOffers());
 	}
 }

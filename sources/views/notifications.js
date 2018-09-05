@@ -1,13 +1,14 @@
 import {JetView} from "webix-jet";
-import {notifications} from "models/notifications";
+import {getNotifications} from "models/notifications";
 
-export default class NotificationView extends JetView {
+export default class NotificationsPopup extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
 		return {
 			view:"popup",
 			body:{
 				view:"list",
+				localId:"list",
 				borderless:true,
 				css:"notifications",
 				width:250, height:350,
@@ -24,11 +25,10 @@ export default class NotificationView extends JetView {
 			}
 		};
 	}
-	init(view){
-		view.queryView({view:"list"}).sync(notifications);
+	init(){
+		this.$$("list").parse(getNotifications());
 	}
-	showLatest(pos){
+	showPopup(pos){
 		this.getRoot().show(pos);
-		//this.app.callEvent("read:notifications");
 	}
 }

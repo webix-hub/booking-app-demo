@@ -7,7 +7,6 @@ export default class LanguagesPopup extends JetView {
 			width:100,
 			body:{
 				view:"list",
-				localId:"lang",
 				scroll:false,
 				yCount:6,
 				select:true,
@@ -35,7 +34,7 @@ export default class LanguagesPopup extends JetView {
 			}
 		};
 	}
-	showLangs(pos){
+	showPopup(pos){
 		this.getRoot().show(pos);
 	}
 	toggleLanguage(value,country){

@@ -1,6 +1,6 @@
 import {JetView} from "webix-jet";
 
-export default class Registration extends JetView {
+export default class RegistrationView extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
 		return {
@@ -20,9 +20,7 @@ export default class Registration extends JetView {
 							view:"text", label:_("Confirm Password"),
 							type:"password", placeholder:"********"
 						},
-						{
-							view:"button", type:"form", value:_("Register"),
-						}
+						{ view:"button", type:"form", value:_("Register") }
 					]
 				}
 			]

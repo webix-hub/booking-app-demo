@@ -1,10 +1,11 @@
 import {JetView} from "webix-jet";
 import {getCities} from "models/cities";
 
-export default class BookingFlight extends JetView {
+export default class BookingFlightView extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
 		const cities = getCities();
+		const date_format = "%d %M %Y";
 		return {
 			view:"form",
 			elementsConfig:{ labelWidth:100, labelAlign:"right" },
@@ -20,9 +21,9 @@ export default class BookingFlight extends JetView {
 					on:{
 						onChange:newv => {
 							if (newv == 2)
-								this.$$("datepicker2").show();
+								this.$$("return:date").show();
 							else
-								this.$$("datepicker2").hide();
+								this.$$("return:date").hide();
 						}
 					}
 				},
@@ -36,16 +37,14 @@ export default class BookingFlight extends JetView {
 				},
 				{
 					view:"datepicker", label:_("Departure"),
-					value:new Date(), format:"%d %M %Y"
+					value:new Date(), format:date_format
 				},
 				{
-					view:"datepicker", localId:"datepicker2",
-					label:_("Return"), value:new Date(), format:"%d %M %Y",
+					view:"datepicker", localId:"return:date",
+					label:_("Return"), value:new Date(), format:date_format,
 					hidden:true
 				},
-				{
-					view:"counter", label:_("Adults"), value:1, min:1
-				},
+				{ view:"counter", label:_("Adults"), value:1, min:1 },
 				{ view:"counter", label:_("Children") },
 				{
 					view:"button", type:"form", value:_("Book Now")

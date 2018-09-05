@@ -1,7 +1,7 @@
 import {JetView} from "webix-jet";
-import {info} from "models/info";
+import {getInfo} from "models/info";
 
-export default class FlightInfo extends JetView {
+export default class FlightInfoView extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
 		return {
@@ -17,16 +17,16 @@ export default class FlightInfo extends JetView {
 					id:"status", header:_("Status"), fillspace:1, sort:"string",
 					template:obj => {
 						if (obj.status === "On Time")
-							return `<span class='ontime'>&#9679;&nbsp;&nbsp;${_(obj.status)}</span>`;
+							return `<span class="status ontime">&#9679;&nbsp;&nbsp;${_(obj.status)}</span>`;
 						else
-							return `<span class='landed'>&#9679;&nbsp;&nbsp;${_(obj.status)}</span>`;
+							return `<span class="status landed">&#9679;&nbsp;&nbsp;${_(obj.status)}</span>`;
 					}
 				}
 			]
 		};
 	}
 	init(view){
-		view.parse(info);
+		view.parse(getInfo());
 
 		this.on(this.app,"search:flight", (from,to) => {
 			view.hideOverlay();

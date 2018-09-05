@@ -1,6 +1,6 @@
 export function getCities(){
 	return cities;
-};
+}
 
 const cities = [
 	{ id:1, value:"Berlin" },
@@ -12,5 +12,12 @@ const cities = [
 	{ id:7, value:"St.Petersburg" },
 	{ id:8, value:"Tallin" },
 	{ id:9, value:"Vilnius" },
-	{ id:10, value:"Warsaw" }
+	{ id:10, value:"Warsaw" },
+	{ id:11, value:"Rome" },
+	{ id:12, value:"Oslo" },
+	{ id:13, value:"Barcelona" },
+	{ id:14, value:"Milan" },
+	{ id:15, value:"Zhulhany" },
+	{ id:16, value:"Stockholm" },
+	{ id:17, value:"Frankfurt" }
 ];

@@ -40,8 +40,8 @@ export default {
 	"Tickets":"Tickets",
 	"Status":"Status",
 	"Booking":"Booking",
-	"Previous":"Previous",
-	"Next":"Next",
+	"< Previous":"< Previous",
+	"Next >":"Next >",
 	"Flight number":"Flight number",
 	"Enter flight No.":"Enter flight No.",
 	"Departs":"Departs",
@@ -64,4 +64,4 @@ export default {
 	"Latest notifications":"Latest notifications",
 	"Change the language":"Change the language",
 	"Click to change the theme":"Click to change the theme"
-}
+};

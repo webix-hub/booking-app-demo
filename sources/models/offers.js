@@ -1,4 +1,8 @@
-export const offers = new webix.DataCollection({
+export function getOffers(){
+	return offers;
+}
+
+const offers = new webix.DataCollection({
 	scheme:{                                                                              
 		$init:function(obj){                                                                          
 			obj.date = webix.i18n.parseFormatDate(obj.date);

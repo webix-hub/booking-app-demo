@@ -1,6 +1,14 @@
 import {JetView} from "webix-jet";
 
-export default class BestOffers extends JetView {
+/*
+	these banners are an experiment.
+	if the idea is good and worth the candle,
+	then there will be design and we will give it a go.
+	if not, this view and its tab will be removed.
+	ruthlessly.
+*/
+
+export default class BestOffersView extends JetView {
 	config(){
 		return {
 			view:"dataview",

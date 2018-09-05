@@ -40,8 +40,8 @@ export default {
 	"Tickets":"티켓",
 	"Status":"지위",
 	"Booking":"예매",
-	"Previous":"너무 이른",
-	"Next":"다음 것",
+	"< Previous":"< 너무 이른",
+	"Next >":"다음 것 >",
 	"Flight number":"항공편 번호",
 	"Enter flight No.":"항공편 번호 입력",
 	"Departs":"출발",
@@ -64,4 +64,4 @@ export default {
 	"Latest notifications":"최신 알림",
 	"Change the language":"언어 변경",
 	"Click to change the theme":"테마를 변경하려면 클릭하십시오"
-}
+};

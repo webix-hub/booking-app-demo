@@ -1,4 +1,7 @@
 /* statuses */
+.status{
+	font-weight:500;
+}
 .open{
 	color:#55CD97;
 }
