@@ -20,7 +20,7 @@ export default class NotificationsPopup extends JetView {
 				},
 				type:{
 					itemNew: () => "<span class='webix_icon mdi mdi-alert-decagram unread'></span>",
-					height:120
+					height:"auto"
 				}
 			}
 		};
