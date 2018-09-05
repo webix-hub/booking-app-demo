@@ -1,9 +1,10 @@
 import {JetView} from "webix-jet";
-import {cities} from "models/cities";
+import {getCities} from "models/cities";
 
 export default class BookingFlight extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
+		const cities = getCities();
 		return {
 			view:"form",
 			elementsConfig:{ labelWidth:100, labelAlign:"right" },

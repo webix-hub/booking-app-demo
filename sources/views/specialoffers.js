@@ -1,9 +1,10 @@
 import {JetView, plugins} from "webix-jet";
-import {cities} from "models/cities";
+import {getCities} from "models/cities";
 
 export default class SpecialOffers extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
+		const cities = getCities();
 		return {
 			gravity:3,
 			type:"clean",
@@ -22,10 +23,8 @@ export default class SpecialOffers extends JetView {
 							options:cities,
 							on:{
 								onChange:newv => {
-									if (newv){
-										this.$$("to").enable();
-										this.$$("to").setValue("");
-									}
+									newv ? this.$$("to").enable() : this.$$("to").disable();
+									this.$$("to").setValue("");
 								}
 							}							
 						},
@@ -49,9 +48,15 @@ export default class SpecialOffers extends JetView {
 							width:100, view:"button", type:"form", batch:"search",
 							value:_("Search"), align:"left",
 							click:() => {
-								const route = this.getRoot().queryView({ view:"combo" });
-								if (route[0].getValue() && route[1].getValue() )
-									webix.message("searching (to be implemented tomorrow");
+								const id_from = $$("depart:combo").getValue();
+								const id_to = this.$$("to").getValue();
+								if (id_from && id_to){
+									const from = cities[id_from-1].value;
+									const to = cities[id_to-1].value;
+									this.app.callEvent("search:flight",[from,to]);
+								}
+								else
+									this.app.callEvent("search:flight");
 							}
 						},
 						{ width:30 },
