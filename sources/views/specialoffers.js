@@ -41,6 +41,7 @@ export default class SpecialOffersView extends JetView {
 						},
 						{
 							id:"book", header:_("Booking"),
+							adjust:"data",
 							template:() => `<a class="book_flight" href="javascript:void(0)">${_("Book now")}</a>`
 						}
 					],
