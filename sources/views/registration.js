@@ -6,7 +6,8 @@ export default class RegistrationView extends JetView {
 		return {
 			rows:[
 				{
-					view:"form", elementsConfig:{ labelAlign:"right", labelWidth:140 },
+					view:"form", borderless:true,
+					elementsConfig:{ labelAlign:"right", labelWidth:140 },
 					elements:[
 						{ view:"text", label:_("First Name"), placeholder:"Matthew" },
 						{ view:"text", label:_("Last Name"), placeholder:"Clark" },

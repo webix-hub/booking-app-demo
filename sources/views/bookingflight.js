@@ -8,6 +8,7 @@ export default class BookingFlightView extends JetView {
 		const date_format = "%d %M %Y";
 		return {
 			view:"form",
+			borderless:true,
 			elementsConfig:{ labelWidth:100, labelAlign:"right" },
 			elements:[
 				{
