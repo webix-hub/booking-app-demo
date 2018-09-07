@@ -7,7 +7,6 @@ export default class AllFlightsView extends JetView {
 		const cities = getCities();
 		return {
 			gravity:3,
-			type:"clean",
 			rows:[
 				{
 					view:"toolbar",
@@ -32,7 +31,7 @@ export default class AllFlightsView extends JetView {
 									}
 									this.$$("to").setValue("");
 								}
-							}							
+							}
 						},
 						{
 							view:"combo", batch:"search",
@@ -48,7 +47,7 @@ export default class AllFlightsView extends JetView {
 										}
 									}
 								}
-							}							
+							}
 						},
 						{
 							width:100, view:"button", type:"form", batch:"search",
