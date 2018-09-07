@@ -12,39 +12,49 @@ export default class TopView extends JetView{
 			rows:[
 				{
 					view:"toolbar",
+					height:56,
 					localId:"toolbar",
 					elements:[
 						{
-							view:"label",
-							template:"Webix Booking App"
-						},
-						{},
-						{
-							view:"icon",
-							localId:"themes",
-							icon:"theme-light-dark",
-							tooltip:_("Click to change the theme"),
-							click:function(){
-								let color = this.config.color;
-								color = (color === "light") ? "dark" : "light";
-								webix.storage.local.put("theme_color",color);
-								this.$scope.app.config.theme = color;
-								this.$scope.app.refresh();
-							}
-						},
-						{
-							view:"icon", icon:"bell",
-							badge:2, tooltip:_("Latest notifications"),
-							click:function(){
-								this.$scope.notifications.showPopup(this.$view);
-							}
-						},
-						{
-							view:"icon", icon:"earth",
-							tooltip:_("Change the language"),
-							click:function(){
-								this.$scope.languages.showPopup(this.$view);
-							}
+							paddingY:4,
+							rows:[
+								{
+									cols:[
+										{
+											view:"label",
+											template:"Webix Booking App"
+										},
+										{},
+										{
+											view:"icon",
+											localId:"themes",
+											icon:"theme-light-dark",
+											tooltip:_("Click to change the theme"),
+											click:function(){
+												let color = this.config.color;
+												color = (color === "light") ? "dark" : "light";
+												webix.storage.local.put("theme_color",color);
+												this.$scope.app.config.theme = color;
+												this.$scope.app.refresh();
+											}
+										},
+										{
+											view:"icon", icon:"bell",
+											badge:2, tooltip:_("Latest notifications"),
+											click:function(){
+												this.$scope.notifications.showPopup(this.$view);
+											}
+										},
+										{
+											view:"icon", icon:"earth",
+											tooltip:_("Change the language"),
+											click:function(){
+												this.$scope.languages.showPopup(this.$view);
+											}
+										}
+									]
+								}
+							]
 						}
 					]
 				},
