@@ -71,7 +71,8 @@ export default class AllFlightsView extends JetView {
 								{ id:"regularoffers", value:_("Regular") },
 								{ id:"flightinfo", value:_("Info") }
 							]
-						}
+						},
+						{ width:6 }
 					]
 				},
 				{ $subview:true }
