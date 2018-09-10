@@ -41,6 +41,7 @@ export default class TopView extends JetView{
 										},
 										{
 											view:"icon", icon:"bell",
+											localId:"bell",
 											badge:2, tooltip:_("Latest notifications"),
 											click:function(){
 												this.$scope.notifications.showPopup(this.$view);
@@ -72,5 +73,16 @@ export default class TopView extends JetView{
 	init(){
 		this.languages = this.ui(LanguagesPopup);
 		this.notifications = this.ui(NotificationsPopup);
+
+		this.on(this.app,"read:notifications",() => {
+			this.$$("bell").config.badge = 0;
+			this.$$("bell").refresh();
+
+			setTimeout(() => {
+				this.$$("bell").config.badge += 1;
+				this.$$("bell").refresh();
+				this.app.callEvent("new:notification");
+			},10000);
+		});
 	}
 }

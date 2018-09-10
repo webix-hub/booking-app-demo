@@ -14,7 +14,7 @@ export default class SpecialOffersView extends JetView {
 					pager:"flight:pager",
 					columns:[
 						{ id:"id", header:"#", width:60, sort:"int" },
-						{ id:"direction", header:_("Direction"), fillspace:5 },
+						{ id:"direction", header:_("Direction"), fillspace:5, sort:"string" },
 						{
 							id:"date", header:_("Date"), fillspace:3, sort:"date",
 							format:webix.i18n.longDateFormatStr
