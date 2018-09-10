@@ -4,7 +4,9 @@ import {getCities} from "models/cities";
 export default class AllFlightsView extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;
+		const theme = this.app.config.theme;
 		const cities = getCities();
+
 		return {
 			gravity:3,
 			rows:[
@@ -12,6 +14,7 @@ export default class AllFlightsView extends JetView {
 					view:"toolbar",
 					localId:"toolbar",
 					visibleBatch:"default",
+					css:theme,
 					cols:[
 						{ view:"label", template:_("Flights"), autowidth:true },
 						{ width:30 },
@@ -81,19 +84,9 @@ export default class AllFlightsView extends JetView {
 	}
 	init(){
 		this.use(plugins.Menu,"offers");
-
-		const ccolor = this.app.config.theme;
-		if (ccolor) this.toggleThemes(ccolor);
 	}
 	urlChange(ui,url){
 		const toolbar = this.$$("toolbar");
 		toolbar.showBatch(url[1].page === "flightinfo" ? "search" : "default");
-	}
-	toggleThemes(color){
-		const toolbar = this.$$("toolbar").$view;
-		if (color === "dark")
-			webix.html.addCss(toolbar,"webix_dark");
-		else
-			webix.html.removeCss(toolbar,"webix_dark");
 	}
 }

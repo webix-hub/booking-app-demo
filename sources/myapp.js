@@ -9,7 +9,7 @@ export default class MyApp extends JetApp{
 			router 	: BUILD_AS_MODULE ? EmptyRouter : HashRouter,
 			debug 	: !PRODUCTION,
 			start 	: "/top/specialoffers",
-			theme	: webix.storage.local.get("theme_color") || "light"
+			theme	: webix.storage.local.get("theme_color") || ""
 		};
 
 		super({ ...defaults, ...config });
@@ -18,7 +18,7 @@ export default class MyApp extends JetApp{
 
 if (!BUILD_AS_MODULE){
 	webix.ready(() => {
-		if (!webix.env.touch && webix.ui.scrollSize)
+		if (!webix.env.touch && webix.ui.scrollSize && webix.CustomScroll)
 			webix.CustomScroll.init();
 		const app = new MyApp();
 		app.use(plugins.Locale);

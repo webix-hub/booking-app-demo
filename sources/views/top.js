@@ -7,13 +7,14 @@ import NotificationsPopup from "views/notifications";
 export default class TopView extends JetView{
 	config(){
 		const _ = this.app.getService("locale")._;
-		
+		const theme = this.app.config.theme;
 		return {
 			rows:[
 				{
 					view:"toolbar",
 					height:56,
 					localId:"toolbar",
+					css:theme,
 					elements:[
 						{
 							paddingY:4,
@@ -27,12 +28,12 @@ export default class TopView extends JetView{
 										{},
 										{
 											view:"icon",
-											localId:"themes",
 											icon:"theme-light-dark",
 											tooltip:_("Click to change the theme"),
+											color:theme,
 											click:function(){
 												let color = this.config.color;
-												color = (color === "light") ? "dark" : "light";
+												color = !color ? "webix_dark" : "";
 												webix.storage.local.put("theme_color",color);
 												this.$scope.app.config.theme = color;
 												this.$scope.app.refresh();
@@ -71,16 +72,5 @@ export default class TopView extends JetView{
 	init(){
 		this.languages = this.ui(LanguagesPopup);
 		this.notifications = this.ui(NotificationsPopup);
-
-		const ccolor = this.app.config.theme;
-		if (ccolor) this.toggleThemes(ccolor);
-	}
-	toggleThemes(color){
-		const toolbar = this.$$("toolbar").$view;
-		if (color === "dark")
-			webix.html.addCss(toolbar,"webix_dark");
-		else
-			webix.html.removeCss(toolbar,"webix_dark");
-		this.$$("themes").config.color = color;
 	}
 }
