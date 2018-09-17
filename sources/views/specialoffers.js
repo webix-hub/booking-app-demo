@@ -29,7 +29,7 @@ export default class SpecialOffersView extends JetView {
 						},
 						{ id:"places", header:_("Tickets"), sort:"int", fillspace:1 },
 						{
-							id:"status", header:_("Status"), sort:"text", fillspace:2,
+							id:"status", header:_("Status"), sort:"text", adjust:"data",
 							template:obj => {
 								let st = "";
 								if (obj.status === "Open")

@@ -61,5 +61,17 @@ export default {
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Уважаемая Анна, летите в Гетеборг и Стокгольм со скидкой! С 25 июля по 20 августа 2018 билеты в Швецию стоят всего 9.99...",
 	"Click to change the theme":"Изменить цветовую схему",
 	"< Previous":"< Предыдущая",
-	"Next >":"Следующая >"
+	"Next >":"Следующая >",
+	"Warning":"Внимание",
+	"This demo app is heavy on Webix DataTable, a nice widget for lo-ots of numbers and such. You can sort records by any column.":"В этой демке очень много Webix DataTable, классного компонента для данных с цифирью и прочим подобным. Вы можете отсортировать все записи по любой колонке.",
+	"Components":"Компоненты",
+	"Can you name all the Webix components that have been used to build the demo app?":"Сможете назвать все компоненты Webix, из которых была построена эта демка?",
+	"We missed you":"Мы скучали по вам",
+	"We know that you have been pretty busy lately and we are very happy to see you here. Yep, we see you.":"Мы знаем, как заняты вы были последнее время. Мы очень счастливы видеть вас здесь. О да, мы вас видим.",
+	"Have a nice day":"Хорошего вам дня",
+	"Dear client, whenever you are reading this, we wish you a merry day. May luck and success attend you.":"Уважаемые клиенты, если вы читаете это, значит мы желаем вам веселого дня. Да пребудут с вами удача и успех.",
+	"Themes and Locales":"Темы и языки",
+	"You can change the language and the color theme of the demo app. Just click the icons on the toolbar.":"Вы можете выбрать язык и цветовую тему для этой демки. Кликните по одной из иконок на тулбаре.",
+	"We love you":"Мы любим вас",
+	"Dear client, we love you very much. If our feelings are mutual, contact us and download Webix. Then we will love you eternally.":"Уважаемые клиенты, мы вас очень любим. Если наши чувства взаимны, пишите нам и скачивайте Webix. Тогда мы будем любить вас вечно."
 };

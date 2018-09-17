@@ -63,5 +63,17 @@ export default {
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Estimada Jane, los vuelos a Gotemburgo y Estocolmo están disponibles con descuentos. Del 25 de julio al 20 de agosto, 2018 volará a Suecia por 9.99 ...",
 	"Latest notifications":"Últimas notificaciones",
 	"Change the language":"Cambia el idioma",
-	"Click to change the theme":"Haga clic para cambiar el tema"
+	"Click to change the theme":"Haga clic para cambiar el tema",
+	"Warning":"Advertencia",
+	"This demo app is heavy on Webix DataTable, a nice widget for lo-ots of numbers and such. You can sort records by any column.":"Esta aplicación de demostración es pesada en Webix DataTable, un buen widget para loot de números y tal. Puede ordenar registros por cualquier columna.",
+	"Components":"Componentes",
+	"Can you name all the Webix components that have been used to build the demo app?":"¿Puedes nombrar todos los componentes de Webix que se han utilizado para construir la aplicación de demostración?",
+	"We missed you":"Te extrañamos",
+	"We know that you have been pretty busy lately and we are very happy to see you here. Yep, we see you.":"Sabemos que has estado muy ocupado últimamente y estamos muy contentos de verte aquí. Sí, te vemos.",
+	"Have a nice day":"Que tengas un buen día",
+	"Dear client, whenever you are reading this, we wish you a merry day. May luck and success attend you.":"Estimado cliente, cada vez que esté leyendo esto, le deseamos un feliz día. Que la suerte y el éxito te atiendan.",
+	"Themes and Locales":"Temas y Locales",
+	"You can change the language and the color theme of the demo app. Just click the icons on the toolbar.":"Puede cambiar el idioma y el tema de color de la aplicación de demostración. Simplemente haga clic en los iconos en la barra de herramientas.",
+	"We love you":"Te amamos",
+	"Dear client, we love you very much. If our feelings are mutual, contact us and download Webix. Then we will love you eternally.":"Estimado cliente, lo queremos mucho. Si nuestros sentimientos son mutuos, contáctenos y descargue Webix. Entonces te amaremos por siempre."
 };

@@ -13,7 +13,7 @@ export default class PagerView extends JetView {
 				{
 					view:"pager",
 					id:"flight:pager",
-					size:24, width:420,
+					size:24, minWidth:500,
 					template:"{common.prev()} {common.pages()} {common.next()}"
 				},
 				{}

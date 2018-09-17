@@ -23,7 +23,7 @@ export default class RegularOffersView extends JetView {
 						{ id:"deptime", header:_("Departs"), width:100 },
 						{ id:"arrtime", header:_("Arrives"), width:100 },
 						{
-							id:"comments", header:_("Comments"), fillspace:1, sort:"string",
+							id:"comments", header:_("Comments"), adjust:"width", sort:"string",
 							template:obj => {
 								if (obj.comments === 1)
 									return `<span class="status ontime">&#9679;&nbsp;&nbsp;${_("On Time")}</span>`;

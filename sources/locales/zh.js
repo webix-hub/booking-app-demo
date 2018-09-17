@@ -63,5 +63,17 @@ export default {
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"親愛的簡，飛往哥德堡和斯德哥爾摩的航班可享受折扣優惠。從2018年7月25日到8月20日飛往瑞典9.99 ...",
 	"Latest notifications":"最新通知",
 	"Change the language":"改變語言",
-	"Click to change the theme":"單擊以更改主題"
+	"Click to change the theme":"單擊以更改主題",
+	"Warning":"警告",
+	"This demo app is heavy on Webix DataTable, a nice widget for lo-ots of numbers and such. You can sort records by any column.":"這個演示應用程序在Webix DataTable上很重要，這是一個很好的小部件，適用於大量數字等等。您可以按任何列對記錄進行排序。",
+	"Components":"組件",
+	"Can you name all the Webix components that have been used to build the demo app?":"您能說出用於構建演示應用程序的所有Webix組件嗎？",
+	"We missed you":"我們想你",
+	"We know that you have been pretty busy lately and we are very happy to see you here. Yep, we see you.":"我們知道你最近很忙，我們很高興在這裡見到你。是的，我們見到你了。",
+	"Have a nice day":"祝你今天愉快",
+	"Dear client, whenever you are reading this, we wish you a merry day. May luck and success attend you.":"親愛的客戶，無論何時，只要您正在閱讀本文，我們祝您聖誕快樂。祝你好運和成功。",
+	"Themes and Locales":"主題和區域設置",
+	"You can change the language and the color theme of the demo app. Just click the icons on the toolbar.":"您可以更改演示應用程序的語言和顏色主題。只需單擊工具欄上的圖標即可。",
+	"We love you":"我們愛你",
+	"Dear client, we love you very much. If our feelings are mutual, contact us and download Webix. Then we will love you eternally.":"親愛的客戶，我們非常愛你。如果我們的感受是相互的，請聯繫我們並下載Webix。然後我們會永遠愛你。"
 };

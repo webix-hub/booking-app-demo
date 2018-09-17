@@ -63,5 +63,17 @@ export default {
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...",
 	"Latest notifications":"Latest notifications",
 	"Change the language":"Change the language",
-	"Click to change the theme":"Click to change the theme"
+	"Click to change the theme":"Click to change the theme",
+	"Warning":"Warning",
+	"This demo app is heavy on Webix DataTable, a nice widget for lo-ots of numbers and such. You can sort records by any column.":"This demo app is heavy on Webix DataTable, a nice widget for lo-ots of numbers and such. You can sort records by any column.",
+	"Components":"Components",
+	"Can you name all the Webix components that have been used to build the demo app?":"Can you name all the Webix components that have been used to build the demo app?",
+	"We missed you":"We missed you",
+	"We know that you have been pretty busy lately and we are very happy to see you here. Yep, we see you.":"We know that you have been pretty busy lately and we are very happy to see you here. Yep, we see you.",
+	"Have a nice day":"Have a nice day",
+	"Dear client, whenever you are reading this, we wish you a merry day. May luck and success attend you.":"Dear client, whenever you are reading this, we wish you a merry day. May luck and success attend you.",
+	"Themes and Locales":"Themes and Locales",
+	"You can change the language and the color theme of the demo app. Just click the icons on the toolbar.":"You can change the language and the color theme of the demo app. Just click the icons on the toolbar.",
+	"We love you":"We love you",
+	"Dear client, we love you very much. If our feelings are mutual, contact us and download Webix. Then we will love you eternally.":"Dear client, we love you very much. If our feelings are mutual, contact us and download Webix. Then we will love you eternally."
 };
