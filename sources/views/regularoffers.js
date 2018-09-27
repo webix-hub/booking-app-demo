@@ -1,6 +1,5 @@
 import {JetView} from "webix-jet";
 import {getOffers} from "models/offers";
-import PagerView from "views/pager";
 
 export default class RegularOffersView extends JetView {
 	config(){
@@ -11,7 +10,6 @@ export default class RegularOffersView extends JetView {
 					view:"datatable",
 					localId:"all:flights",
 					select:true,
-					pager:"flight:pager",
 					columns:[
 						{ id:"id", header:"#", width:80, sort:"int" },
 						{ id:"no", header:_("Number"), fillspace:1, sort:"string" },
@@ -32,8 +30,7 @@ export default class RegularOffersView extends JetView {
 							}
 						}
 					]
-				},
-				PagerView
+				}
 			]
 		};
 	}

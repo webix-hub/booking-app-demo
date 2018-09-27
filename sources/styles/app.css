@@ -45,3 +45,10 @@
 	position: relative;
 	bottom:-130px;
 }
+.book_flight{
+	text-decoration: none;
+	color: #196ad4;
+}
+.book_flight:hover{
+	text-decoration: underline;
+}

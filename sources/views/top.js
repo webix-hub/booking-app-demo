@@ -17,7 +17,7 @@ export default class TopView extends JetView{
 					css:theme,
 					elements:[
 						{
-							paddingY:4,
+							paddingY:7,
 							rows:[
 								{
 									cols:[
@@ -28,7 +28,7 @@ export default class TopView extends JetView{
 										{},
 										{
 											view:"icon",
-											icon:"theme-light-dark",
+											icon:"mdi mdi-theme-light-dark",
 											tooltip:_("Click to change the theme"),
 											color:theme,
 											click:function(){
@@ -40,7 +40,7 @@ export default class TopView extends JetView{
 											}
 										},
 										{
-											view:"icon", icon:"bell",
+											view:"icon", icon:"mdi mdi-bell",
 											localId:"bell",
 											badge:2, tooltip:_("Latest notifications"),
 											click:function(){
@@ -48,7 +48,7 @@ export default class TopView extends JetView{
 											}
 										},
 										{
-											view:"icon", icon:"earth",
+											view:"icon", icon:"mdi mdi-earth",
 											tooltip:_("Change the language"),
 											click:function(){
 												this.$scope.languages.showPopup(this.$view);

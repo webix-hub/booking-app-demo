@@ -60,8 +60,6 @@ export default {
 	"Way Out West: festivals!":"Way Out West: фестивали!",
 	"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99...":"Уважаемая Анна, летите в Гетеборг и Стокгольм со скидкой! С 25 июля по 20 августа 2018 билеты в Швецию стоят всего 9.99...",
 	"Click to change the theme":"Изменить цветовую схему",
-	"< Previous":"< Предыдущая",
-	"Next >":"Следующая >",
 	"Warning":"Внимание",
 	"This demo app is heavy on Webix DataTable, a nice widget for lo-ots of numbers and such. You can sort records by any column.":"В этой демке очень много Webix DataTable, классного компонента для данных с цифирью и прочим подобным. Вы можете отсортировать все записи по любой колонке.",
 	"Components":"Компоненты",

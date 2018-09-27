@@ -40,8 +40,6 @@ export default {
 	"Tickets":"Tickets",
 	"Status":"Status",
 	"Booking":"Buchung",
-	"< Previous":"< Bisherige",
-	"Next >":"Nächster >",
 	"Flight number":"Flugnummer",
 	"Enter flight No.":"Geben Sie die Flugnummer ein",
 	"Departs":"Abfahrt",
