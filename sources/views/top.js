@@ -20,6 +20,7 @@ export default class TopView extends JetView{
 							paddingY:7,
 							rows:[
 								{
+									margin:8,
 									cols:[
 										{
 											view:"label",
@@ -28,7 +29,7 @@ export default class TopView extends JetView{
 										{},
 										{
 											view:"icon",
-											icon:"mdi mdi-theme-light-dark",
+											icon:"mdi mdi-invert-colors",
 											tooltip:_("Click to change the theme"),
 											color:theme,
 											click:function(){
