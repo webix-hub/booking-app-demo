@@ -43,7 +43,7 @@ export default class TopView extends JetView{
 										{
 											view:"icon", icon:"mdi mdi-bell",
 											localId:"bell",
-											badge:2, tooltip:_("Latest notifications"),
+											badge:3, tooltip:_("Latest notifications"),
 											click:function(){
 												this.$scope.notifications.showPopup(this.$view);
 											}
@@ -83,7 +83,7 @@ export default class TopView extends JetView{
 				this.$$("bell").config.badge += 1;
 				this.$$("bell").refresh();
 				this.app.callEvent("new:notification");
-			},10000);
+			},20000);
 		});
 	}
 }
