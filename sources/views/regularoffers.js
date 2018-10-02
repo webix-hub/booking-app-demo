@@ -35,6 +35,21 @@ export default class RegularOffersView extends JetView {
 		};
 	}
 	init(){
-		this.$$("all:flights").sync(getOffers());
+		const grid = this.$$("all:flights");
+		grid.sync(getOffers());
+
+		this.on(this.app,"search:flight", (from,to,date) => {
+			grid.hideOverlay();
+			if (from && to)
+				grid.filter(obj => {
+					const data_from = obj.direction.indexOf(from);
+					const data_to = obj.direction.indexOf(to);
+					return data_from !== -1 && data_to !== -1 && data_from < data_to && obj.date.toString().slice(0,14) === date.toString().slice(0,14);
+				});
+			else
+				grid.filter();
+			if (grid.count() === 0)
+				grid.showOverlay("Sorry, there are no flights for this route");
+		});
 	}
 }

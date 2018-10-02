@@ -92,7 +92,7 @@ export default class SearchingFlightView extends JetView {
 					value:_("Search Now"),
 					click:function(){
 						const data = this.getFormView().getValues();
-						if (data.departure_point && data.destination && data.departure_date){
+						if (data.departure_point && data.destination){
 							const from = cities[data.departure_point-1].value;
 							const to = cities[data.destination-1].value;
 							this.$scope.app.callEvent("search:flight",[from,to,data.departure_date]);
