@@ -1,5 +1,5 @@
 export default {
-	"Book a Flight":"Buchen Sie Einen Flug",
+	"Look for a Flight":"Suchen Sie nach einem Flug",
 	"Trip":"Fahrkarte",
 	"One-Way":"One-Way",
 	"Return":"Rück",
@@ -10,7 +10,7 @@ export default {
 	"Departure":"Abfahrt",
 	"Adults":"Erwachsene",
 	"Children":"Kinder",
-	"Book Now":"Buchen Sie jetzt",
+	"Search Now":"Suchen Sie jetzt",
 	"Hotels":"Hotels",
 	"Where":"Wo",
 	"Destination e.g. city, hotel name":"Ziel z.B. Stadt, Hotelname",

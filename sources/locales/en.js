@@ -1,5 +1,5 @@
 export default {
-	"Book a Flight":"Book a Flight",
+	"Look for a Flight":"Look for a Flight",
 	"Trip":"Trip",
 	"One-Way":"One-Way",
 	"Return":"Return",
@@ -10,7 +10,7 @@ export default {
 	"Departure":"Departure",
 	"Adults":"Adults",
 	"Children":"Children",
-	"Book Now":"Book Now",
+	"Search Now":"Search Now",
 	"Hotels":"Hotels",
 	"Where":"Where",
 	"Destination e.g. city, hotel name":"Destination e.g. city, hotel name",

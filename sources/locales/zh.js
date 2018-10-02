@@ -1,5 +1,5 @@
 export default {
-	"Book a Flight":"订机票",
+	"Look for a Flight":"寻找航班",
 	"Trip":"旅",
 	"One-Way":"单程",
 	"Return":"返回",
@@ -10,7 +10,7 @@ export default {
 	"Departure":"离开",
 	"Adults":"成人",
 	"Children":"孩子",
-	"Book Now":"现在预订",
+	"Search Now":"现在搜索",
 	"Hotels":"酒店",
 	"Where":"哪里",
 	"Destination e.g. city, hotel name":"目的地城市，酒店名稱",

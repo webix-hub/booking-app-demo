@@ -1,5 +1,5 @@
 export default {
-	"Book a Flight":"Купить билет",
+	"Look for a Flight":"Поиск рейсов",
 	"Trip":"Билет",
 	"One-Way":"Туда",
 	"Return":"Обратно",
@@ -10,7 +10,7 @@ export default {
 	"Departure":"Вылет",
 	"Adults":"Взрослые",
 	"Children":"Дети",
-	"Book Now":"Купить",
+	"Search Now":"Искать",
 	"Hotels":"Отели",
 	"Where":"Где",
 	"Destination e.g. city, hotel name":"Город, название отеля",

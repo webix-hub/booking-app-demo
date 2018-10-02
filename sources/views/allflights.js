@@ -20,25 +20,28 @@ export default class AllFlightsView extends JetView {
 						{ width:30 },
 						{ batch:"default" },
 						{
-							view:"combo", batch:"search",
+							view:"combo",
 							id:"depart:combo",
+							batch:"search",
 							placeholder:_("Select departure point"),
 							options:cities,
 							on:{
 								onChange:newv => {
 									if (newv)
-										this.$$("to").enable();
+										this.$$("to:combo").enable();
 									else {
-										this.$$("to").disable();
+										this.$$("to:combo").disable();
 										this.app.callEvent("search:flight");
 									}
-									this.$$("to").setValue("");
+									this.$$("to:combo").setValue("");
 								}
 							}
 						},
 						{
-							view:"combo", batch:"search",
-							localId:"to", disabled:true,
+							view:"combo",
+							localId:"to:combo",
+							batch:"search",
+							disabled:true,
 							placeholder:_("Select destination"),
 							options:{
 								data:cities,
@@ -53,11 +56,15 @@ export default class AllFlightsView extends JetView {
 							}
 						},
 						{
-							width:100, view:"button", type:"form", batch:"search",
-							value:_("Search"), align:"left",
+							view:"button",
+							type:"form",
+							batch:"search",
+							width:100,
+							value:_("Search"),
+							align:"left",
 							click:() => {
 								const id_from = webix.$$("depart:combo").getValue();
-								const id_to = this.$$("to").getValue();
+								const id_to = this.$$("to:combo").getValue();
 								if (id_from && id_to){
 									const from = cities[id_from-1].value;
 									const to = cities[id_to-1].value;

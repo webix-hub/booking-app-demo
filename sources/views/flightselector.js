@@ -1,5 +1,5 @@
 import {JetView} from "webix-jet";
-import BookingFlight from "views/bookingflight";
+import SearchingFlight from "views/searchingflight";
 import Hotels from "views/hotels";
 import Cars from "views/cars";
 import Registration from "views/registration";
@@ -16,8 +16,8 @@ export default class FlightSelectorView extends JetView {
 			css:theme,
 			rows:[
 				{
-					header:_("Book a Flight"),
-					body:BookingFlight
+					header:_("Look for a Flight"),
+					body:SearchingFlight
 				},
 				{
 					header:_("Hotels"),

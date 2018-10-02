@@ -1,5 +1,5 @@
 export default {
-	"Book a Flight":"비행기 예약",
+	"Look for a Flight":"항공편 검색",
 	"Trip":"여행",
 	"One-Way":"일방 통행",
 	"Return":"반환",
@@ -10,7 +10,7 @@ export default {
 	"Departure":"출발",
 	"Adults":"성인",
 	"Children":"어린이",
-	"Book Now":"지금 예약",
+	"Search Now":"지금 검색",
 	"Hotels":"호텔",
 	"Where":"어디에",
 	"Destination e.g. city, hotel name":"예 : 목적지 도시, 호텔 이름",

@@ -18,7 +18,7 @@ export default class SpecialOffersView extends JetView {
 							format:webix.i18n.longDateFormatStr
 						},
 						{
-							id:"", header:"Time", fillspace:2,
+							id:"", header:"Time", fillspace:2, minWidth:126,
 							template:obj => obj.deptime + " <span class='webix_icon mdi mdi-arrow-right'></span> " + obj.arrtime
 						},
 						{
@@ -50,6 +50,21 @@ export default class SpecialOffersView extends JetView {
 		};
 	}
 	init(){
-		this.$$("datatable").sync(getOffers());
+		const grid = this.$$("datatable");
+		grid.sync(getOffers());
+
+		this.on(this.app,"search:flight", (from,to,date) => {
+			grid.hideOverlay();
+			if (from && to)
+				grid.filter(obj => {
+					const data_from = obj.direction.indexOf(from);
+					const data_to = obj.direction.indexOf(to);
+					return data_from !== -1 && data_to !== -1 && data_from < data_to && obj.date.toString().slice(0,14) === date.toString().slice(0,14);
+				});
+			else
+				grid.filter();
+			if (grid.count() === 0)
+				grid.showOverlay("Sorry, there are no flights for this route");
+		});
 	}
 }
