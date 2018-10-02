@@ -3,7 +3,7 @@
 	font-weight:500;
 }
 .open{
-	color:#55CD97;
+	color:#41ad7c;
 }
 .soon, .ontime{
 	color:#1CA1C1;
@@ -44,10 +44,6 @@
 	padding-left: 15px;
 	position: relative;
 	bottom:-130px;
-}
-.book_flight{
-	text-decoration: none;
-	color: #196ad4;
 }
 .book_flight:hover{
 	text-decoration: underline;

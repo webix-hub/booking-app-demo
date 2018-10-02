@@ -18,6 +18,10 @@ export default class SpecialOffersView extends JetView {
 							format:webix.i18n.longDateFormatStr
 						},
 						{
+							id:"", header:"Time", fillspace:2,
+							template:obj => obj.deptime + " <span class='webix_icon mdi mdi-arrow-right'></span> " + obj.arrtime
+						},
+						{
 							id:"price", header:_("Price"), sort:"int", fillspace:2,
 							format:webix.i18n.priceFormat
 						},
@@ -36,11 +40,6 @@ export default class SpecialOffersView extends JetView {
 									st = (obj.status === "Last deals") ? "last" : "soon";
 								return `<span class="status ${st}">&#9679;&nbsp;&nbsp;${_(obj.status)}</span>`;
 							}
-						},
-						{
-							id:"book", header:_("Booking"),
-							adjust:"data",
-							template:() => `<a class="book_flight" href="javascript:void(0)">${_("Book now")}</a>`
 						}
 					],
 					onClick:{
