@@ -37,7 +37,6 @@ export default class NotificationsPopup extends JetView {
 	init(){
 		const list = this.$$("list");
 		list.parse(getNotifications());
-		list.waitData.then(() => list.resize());
 
 		webix.extend(list,webix.OverlayBox);
 
