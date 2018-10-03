@@ -3,6 +3,7 @@ export function getCities(){
 }
 
 const cities = [
+	{ id:"$empty", value:"-- Not selected --", $empty:true },
 	{ id:1, value:"Riga" },
 	{ id:2, value:"Warsaw" },
 	{ id:3, value:"Berlin" },

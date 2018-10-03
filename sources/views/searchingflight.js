@@ -6,6 +6,7 @@ export default class SearchingFlightView extends JetView {
 		const _ = this.app.getService("locale")._;
 		const cities = getCities();
 		const date_format = "%d %M %Y";
+
 		return {
 			view:"form",
 			borderless:true,
@@ -34,26 +35,30 @@ export default class SearchingFlightView extends JetView {
 					id:"dprt:combo",
 					name:"departure_point",
 					label:_("From"), 
-					suggest:cities,
 					placeholder:_("Select departure point"),
 					on:{
 						onChange:newv => {
-							if (newv)
-								this.$$("to:combo").enable();
-							else {
-								this.$$("to:combo").disable();
+							if (!newv)
 								this.app.callEvent("search:flight");
+						}
+					},
+					options:{
+						data:cities,
+						on:{
+							onShow(){
+								let to = webix.$$("to:combo").getValue();
+								if (to){
+									this.getList().filter(obj => obj.id !== to);
+								}
 							}
-							this.$$("to:combo").setValue("");
 						}
 					}
 				},
 				{
 					view:"combo",
-					localId:"to:combo",
+					id:"to:combo",
 					name:"destination",
 					label:_("To"),
-					disabled:true,
 					placeholder:_("Select destination"),
 					options:{
 						data:cities,
@@ -93,8 +98,8 @@ export default class SearchingFlightView extends JetView {
 					click:function(){
 						const data = this.getFormView().getValues();
 						if (data.departure_point && data.destination){
-							const from = cities[data.departure_point-1].value;
-							const to = cities[data.destination-1].value;
+							const from = cities[data.departure_point].value;
+							const to = cities[data.destination].value;
 							this.$scope.app.callEvent("search:flight",[from,to,data.departure_date]);
 						}
 					}
