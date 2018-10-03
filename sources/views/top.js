@@ -14,7 +14,7 @@ export default class TopView extends JetView{
 					view:"toolbar",
 					height:56,
 					localId:"toolbar",
-					css:theme,
+					css:theme + " webix_shadow_medium",
 					elements:[
 						{
 							paddingY:7,
