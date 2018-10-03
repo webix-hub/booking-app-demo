@@ -1,5 +1,5 @@
 import {JetView} from "webix-jet";
-// import {getNotifications} from "models/notifications";
+import {getNotifications} from "models/notifications";
 import {newNotification} from "models/newnotifications";
 
 export default class NotificationsPopup extends JetView {
@@ -13,23 +13,22 @@ export default class NotificationsPopup extends JetView {
 				borderless:true,
 				css:"notifications",
 				width:250,
-				autoheight:true,
+				height:360,
 				template:obj => {
 					return "<span class='m_title'>" + _(obj.title) + "</span>" +
 						"<span class='message'>" + _(obj.message) + "</span>";
 				},
 				type:{
-					height:120
-				},
-				data:[
-					{ title:"Fly to Paris!", message:"Dear Jane, we are happy to share discounts for flights: only on September 24, 2018 all flights to Paris and other towns of France..." },
-					{ title:"Search Improved", message:"Dear Jane! Following the latest updates of the SeekMeEverywhere engines, your search has become more reliable and convenient! No..." },
-					{ title:"Way Out West: festivals!", message:"Dear Jane, Flights to Gothenburg and Stockholm are available with discounts. From July 25 to August 20, 2018 fly to Sweden for 9.99..." }
-				]
+					height:"auto"
+				}
 			},
 			on:{
 				onHide:() => {
-					this.$$("list").clearAll();
+					const list = this.$$("list");
+					list.clearAll();
+					list.showOverlay("<div style='margin:20px; font-size:14px;'>No new notifications</div>");
+					list.define({ height:80 });
+        			list.resize();
 					this.app.callEvent("read:notifications");
 				}
 			}
@@ -37,10 +36,16 @@ export default class NotificationsPopup extends JetView {
 	}
 	init(){
 		const list = this.$$("list");
-		//list.parse(getNotifications());
+		list.parse(getNotifications());
+		list.waitData.then(() => list.resize());
+
+		webix.extend(list,webix.OverlayBox);
 
 		this.on(this.app,"new:notification",() => {
+			list.hideOverlay();
 			list.add(newNotification(),0);
+			list.define({ height:list.count()*104 });
+        	list.resize();
 		});
 	}
 	showPopup(pos){
