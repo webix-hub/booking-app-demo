@@ -1,4 +1,5 @@
 export default {
+	"No new notifications":"새로운 알림 없음",
 	"Look for a Flight":"항공편 검색",
 	"Trip":"여행",
 	"One-Way":"일방 통행",

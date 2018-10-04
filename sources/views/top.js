@@ -83,7 +83,7 @@ export default class TopView extends JetView{
 				this.$$("bell").config.badge += 1;
 				this.$$("bell").refresh();
 				this.app.callEvent("new:notification");
-			},1000);
+			},10000);
 		});
 	}
 }

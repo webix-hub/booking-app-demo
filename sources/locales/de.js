@@ -1,4 +1,5 @@
 export default {
+	"No new notifications":"Keine Nachrichten",
 	"Look for a Flight":"Suchen Sie nach einem Flug",
 	"Trip":"Fahrkarte",
 	"One-Way":"One-Way",

@@ -1,4 +1,5 @@
 export default {
+	"No new notifications":"Нет новых уведомлений",
 	"Look for a Flight":"Поиск рейсов",
 	"Trip":"Билет",
 	"One-Way":"Туда",

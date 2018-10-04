@@ -1,4 +1,5 @@
 export default {
+	"No new notifications":"没有新的通知",
 	"Look for a Flight":"寻找航班",
 	"Trip":"旅",
 	"One-Way":"单程",
