@@ -13,7 +13,7 @@ export default class FlightSelectorView extends JetView {
 			width:400,
 			multi:false,
 			margin:1,
-			css:theme,
+			css:theme + " webix_shadow_small",
 			rows:[
 				{
 					header:_("Look for a Flight"),
@@ -34,8 +34,7 @@ export default class FlightSelectorView extends JetView {
 					css:"registration",
 					collapsed:true,
 					body:Registration
-				},
-				{}
+				}
 			]
 		};
 	}

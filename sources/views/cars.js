@@ -17,52 +17,48 @@ export default class CarsView extends JetView {
 		}
 
 		return {
-			rows:[
+			view:"form", borderless:true,
+			elementsConfig:{ labelAlign:"right", labelWidth:100 },
+			elements:[
 				{
-					view:"form", borderless:true,
-					elementsConfig:{ labelAlign:"right", labelWidth:100 },
-					elements:[
+					view:"text", label:_("Where"),
+					placeholder:_("Location e.g. country, city")
+				},
+				{
+					cols:[
 						{
-							view:"text", label:_("Where"),
-							placeholder:_("Location e.g. country, city")
+							view:"datepicker", label:_("Pick up car"),
+							value:new Date(), format:date_format
+						},
+						{ width:5 },
+						{
+							view:"richselect",
+							value:"09", options:hours, width:65
 						},
 						{
-							cols:[
-								{
-									view:"datepicker", label:_("Pick up car"),
-									value:new Date(), format:date_format
-								},
-								{ width:5 },
-								{
-									view:"richselect",
-									value:"09", options:hours, width:65
-								},
-								{
-									view:"richselect",
-									value:"00", options:minutes, width:65
-								}
-							]
-						},
-						{
-							cols:[
-								{
-									view:"datepicker", label:_("Return car"),
-									value:new Date(), format:date_format
-								},
-								{ width:5 },
-								{
-									view:"richselect",
-									value:"09", options:hours, width:65
-								},
-								{
-									view:"richselect",
-									value:"00", options:minutes, width:65
-								}
-							]
-						},
-						{ view:"button", type:"form", value:_("Search") }
+							view:"richselect",
+							value:"00", options:minutes, width:65
+						}
 					]
-				}
+				},
+				{
+					cols:[
+						{
+							view:"datepicker", label:_("Return car"),
+							value:new Date(), format:date_format
+						},
+						{ width:5 },
+						{
+							view:"richselect",
+							value:"09", options:hours, width:65
+						},
+						{
+							view:"richselect",
+							value:"00", options:minutes, width:65
+						}
+					]
+				},
+				{ view:"button", type:"form", value:_("Search") }
 			]
 		};
 	}

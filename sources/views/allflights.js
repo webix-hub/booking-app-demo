@@ -7,6 +7,7 @@ export default class AllFlightsView extends JetView {
 
 		return {
 			gravity:3,
+			css:"webix_shadow_small",
 			rows:[
 				{
 					view:"toolbar",

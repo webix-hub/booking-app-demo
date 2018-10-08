@@ -63,9 +63,15 @@ export default class TopView extends JetView{
 					]
 				},
 				{
-					type:"space",
+					padding:4,
 					cols:[
-						FlightSelectorView, AllFlightsView
+						{
+							padding:4, rows:[
+								FlightSelectorView,
+								{}
+							]
+						},
+						AllFlightsView
 					]
 				}
 			]
