@@ -13,7 +13,6 @@ export default class NotificationsPopup extends JetView {
 				borderless:true,
 				css:"notifications",
 				width:250,
-				height:360,
 				template:obj => {
 					return "<span class='m_title'>" + _(obj.title) + "</span>" +
 						"<span class='message'>" + _(obj.message) + "</span>";
