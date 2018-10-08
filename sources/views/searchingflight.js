@@ -36,20 +36,30 @@ export default class SearchingFlightView extends JetView {
 					name:"departure_point",
 					label:_("From"), 
 					placeholder:_("Select departure point"),
-					on:{
-						onChange:newv => {
-							if (!newv)
-								this.app.callEvent("search:flight");
-						}
-					},
 					options:{
 						data:cities,
 						on:{
 							onShow(){
+								this.getList().filter(obj => obj.id != 3);
 								let to = webix.$$("to:combo").getValue();
-								if (to){
-									this.getList().filter(obj => obj.id !== to);
-								}
+								if (to == 2)
+									this.getList().filter(obj => obj.id == 1);
+								else if (to == 10)
+									this.getList().filter(obj => obj.id == 2);
+								else if (to == 3)
+									this.getList().filter(obj => obj.id == 4);
+								else if (to == 7)
+									this.getList().filter(obj => obj.id == 5);
+								else if (to == 9)
+									this.getList().filter(obj => obj.id == 6);
+								else if (to == 3 || to == 8)
+									this.getList().filter(obj => obj.id == 7);
+								else if (to == 5)
+									this.getList().filter(obj => obj.id == 8);
+								else if (to == 4)
+									this.getList().filter(obj => obj.id == 9);
+								else if (to == 3)
+									this.getList().filter(obj => obj.id == 10);
 							}
 						}
 					}
@@ -65,9 +75,24 @@ export default class SearchingFlightView extends JetView {
 						on:{
 							onShow(){
 								let from = webix.$$("dprt:combo").getValue();
-								if (from){
-									this.getList().filter(obj => obj.id !== from);
-								}
+								if (from == 1)
+									this.getList().filter(obj => obj.id == 2);
+								else if (from == 2)
+									this.getList().filter(obj => obj.id == 10);
+								else if (from == 4)
+									this.getList().filter(obj => obj.id == 3);
+								else if (from == 5)
+									this.getList().filter(obj => obj.id == 7);
+								else if (from == 6)
+									this.getList().filter(obj => obj.id == 9);
+								else if (from == 7)
+									this.getList().filter(obj => obj.id == 3 || obj.id == 8);
+								else if (from == 8)
+									this.getList().filter(obj => obj.id == 5);
+								else if (from == 9)
+									this.getList().filter(obj => obj.id == 4);
+								else if (from == 10)
+									this.getList().filter(obj => obj.id == 3);
 							}
 						}
 					}
@@ -97,11 +122,13 @@ export default class SearchingFlightView extends JetView {
 					value:_("Search Now"),
 					click:function(){
 						const data = this.getFormView().getValues();
-						if (data.departure_point && data.destination){
-							const from = cities[data.departure_point].value;
-							const to = cities[data.destination].value;
+						if (data.departure_point || data.destination || data.departure_date){
+							const from = data.departure_point ? cities[data.departure_point].value : "";
+							const to = data.destination ? cities[data.destination].value : "";
 							this.$scope.app.callEvent("search:flight",[from,to,data.departure_date]);
 						}
+						else
+							this.$scope.app.callEvent("search:flight");
 					}
 				}
 			]
