@@ -13,7 +13,7 @@ export default class AllFlightsView extends JetView {
 					localId:"toolbar",
 					css:theme,
 					cols:[
-						{ view:"label", template:_("Flights"), autowidth:true },
+						{ view:"label", template:_("Flights") },
 						{},
 						{
 							view:"segmented", localId:"offers",
