@@ -18,8 +18,8 @@ export default class RegularOffersView extends JetView {
 							id:"date", header:_("Date"), fillspace:2, sort:"date",
 							format:webix.i18n.longDateFormatStr
 						},
-						{ id:"deptime", header:_("Departs"), width:100 },
-						{ id:"arrtime", header:_("Arrives"), width:100 },
+						{ id:"deptime", header:_("Departs"), fillspace:1 },
+						{ id:"arrtime", header:_("Arrives"), fillspace:1 },
 						{
 							id:"comments", header:_("Comments"), adjust:"width", sort:"string",
 							template:obj => {

@@ -12,13 +12,13 @@ export default class SpecialOffersView extends JetView {
 					select:true,
 					columns:[
 						{ id:"id", header:"#", width:60, sort:"int" },
-						{ id:"direction", header:_("Direction"), fillspace:5, sort:"string" },
+						{ id:"direction", header:_("Direction"), fillspace:6, sort:"string" },
 						{
 							id:"date", header:_("Date"), fillspace:3, sort:"date",
 							format:webix.i18n.longDateFormatStr
 						},
 						{
-							id:"", header:"Time", fillspace:2, minWidth:126,
+							id:"", header:"Time", fillspace:3, minWidth:126,
 							template:obj => obj.deptime + " <span class='webix_icon mdi mdi-arrow-right'></span> " + obj.arrtime
 						},
 						{
@@ -29,7 +29,7 @@ export default class SpecialOffersView extends JetView {
 							id:"save", header:_("You save"), sort:"int", fillspace:2,
 							format:webix.i18n.priceFormat
 						},
-						{ id:"places", header:_("Tickets"), sort:"int", fillspace:1 },
+						{ id:"places", header:_("Tickets"), sort:"int", fillspace:1.5 },
 						{
 							id:"status", header:_("Status"), sort:"text", adjust:"data",
 							template:obj => {

@@ -8,7 +8,7 @@ export default class FlightInfoView extends JetView {
 			view:"datatable",
 			select:true,
 			columns:[
-				{ id:"no", header:_("Flight No."), sort:"string" },
+				{ id:"no", header:_("Flight No."), fillspace:1, sort:"string" },
 				{ id:"from", header:_("From"), fillspace:1, sort:"string" },
 				{ id:"to", header:_("To"), fillspace:1, sort:"string" },
 				{ id:"depart", header:_("Departs"), fillspace:1, sort:"int" },
