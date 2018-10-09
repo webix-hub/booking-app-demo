@@ -8,6 +8,7 @@ export default class TopView extends JetView{
 	config(){
 		const _ = this.app.getService("locale")._;
 		const theme = this.app.config.theme;
+		
 		return {
 			rows:[
 				{
