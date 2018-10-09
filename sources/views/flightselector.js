@@ -13,7 +13,7 @@ export default class FlightSelectorView extends JetView {
 			width:400,
 			multi:false,
 			margin:1,
-			css:theme + " webix_shadow_small",
+			css:theme,
 			rows:[
 				{
 					header:_("Look for a Flight"),
