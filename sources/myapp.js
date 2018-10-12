@@ -6,22 +6,22 @@ export default class MyApp extends JetApp{
 		const defaults = {
 			id 		: APPNAME,
 			version : VERSION,
-			router 	: BUILD_AS_MODULE ? EmptyRouter : HashRouter,
+			router 	: HashRouter,
 			debug 	: !PRODUCTION,
 			start 	: "/top/specialoffers",
 			theme	: webix.storage.local.get("theme_color") || ""
 		};
 
 		super({ ...defaults, ...config });
+
+		this.use(plugins.Locale);
 	}
 }
 
 if (!BUILD_AS_MODULE){
 	webix.ready(() => {
-		if (!webix.env.touch && webix.ui.scrollSize && webix.CustomScroll)
+		if (!webix.env.touch && webix.env.scrollSize && webix.CustomScroll)
 			webix.CustomScroll.init();
-		const app = new MyApp();
-		app.use(plugins.Locale);
-		app.render();
+		new MyApp().render();
 	});
 }
