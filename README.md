@@ -1,7 +1,7 @@
 Webix Booking App (for the new Webix skin)
 ===================
 
-The project on invision: https://projects.invisionapp.com/d/main#/console/12386541/313827072/preview
+A demo for booking flights and planning vacation.
 
 ### How to run
 
