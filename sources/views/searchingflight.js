@@ -6,6 +6,7 @@ export default class SearchingFlightView extends JetView {
 		const _ = this.app.getService("locale")._;
 		const cities = getCities();
 		const date_format = "%d %M %Y";
+		const cuid = webix.uid();
 
 		return {
 			view:"form",
@@ -32,7 +33,7 @@ export default class SearchingFlightView extends JetView {
 				},
 				{
 					view:"combo",
-					id:"dprt:combo",
+					id:"dprt:combo"+cuid,
 					name:"departure_point",
 					label:_("From"), 
 					placeholder:_("Select departure point"),
@@ -41,7 +42,7 @@ export default class SearchingFlightView extends JetView {
 						on:{
 							onShow(){
 								this.getList().filter(obj => obj.id != 3);
-								let to = webix.$$("to:combo").getValue();
+								let to = webix.$$("to:combo"+cuid).getValue();
 								if (to == 2)
 									this.getList().filter(obj => obj.id == 1 || obj.id == "$empty");
 								else if (to == 10)
@@ -66,7 +67,7 @@ export default class SearchingFlightView extends JetView {
 				},
 				{
 					view:"combo",
-					id:"to:combo",
+					id:"to:combo"+cuid,
 					name:"destination",
 					label:_("To"),
 					placeholder:_("Select destination"),
@@ -74,7 +75,7 @@ export default class SearchingFlightView extends JetView {
 						data:cities,
 						on:{
 							onShow(){
-								let from = webix.$$("dprt:combo").getValue();
+								let from = webix.$$("dprt:combo"+cuid).getValue();
 								if (from == 1)
 									this.getList().filter(obj => obj.id == 2 || obj.id == "$empty");
 								else if (from == 2)
