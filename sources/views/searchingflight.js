@@ -6,7 +6,6 @@ export default class SearchingFlightView extends JetView {
 		const _ = this.app.getService("locale")._;
 		const cities = getCities();
 		const date_format = "%d %M %Y";
-		const cuid = webix.uid();
 
 		return {
 			view:"form",
@@ -33,68 +32,27 @@ export default class SearchingFlightView extends JetView {
 				},
 				{
 					view:"combo",
-					id:"dprt:combo"+cuid,
+					localId:"dprt:combo",
 					name:"departure_point",
 					label:_("From"), 
 					placeholder:_("Select departure point"),
 					options:{
 						data:cities,
 						on:{
-							onShow(){
-								this.getList().filter(obj => obj.id != 3);
-								let to = webix.$$("to:combo"+cuid).getValue();
-								if (to == 2)
-									this.getList().filter(obj => obj.id == 1 || obj.id == "$empty");
-								else if (to == 10)
-									this.getList().filter(obj => obj.id == 2 || obj.id == "$empty");
-								else if (to == 3)
-									this.getList().filter(obj => obj.id == 4 || obj.id == "$empty");
-								else if (to == 7)
-									this.getList().filter(obj => obj.id == 5 || obj.id == "$empty");
-								else if (to == 9)
-									this.getList().filter(obj => obj.id == 6 || obj.id == "$empty");
-								else if (to == 3 || to == 8)
-									this.getList().filter(obj => obj.id == 7 || obj.id == "$empty");
-								else if (to == 5)
-									this.getList().filter(obj => obj.id == 8 || obj.id == "$empty");
-								else if (to == 4)
-									this.getList().filter(obj => obj.id == 9 || obj.id == "$empty");
-								else if (to == 3)
-									this.getList().filter(obj => obj.id == 10 || obj.id == "$empty");
-							}
+							onShow:() => this.filterDepartures()
 						}
 					}
 				},
 				{
 					view:"combo",
-					id:"to:combo"+cuid,
+					localId:"to:combo",
 					name:"destination",
 					label:_("To"),
 					placeholder:_("Select destination"),
 					options:{
 						data:cities,
 						on:{
-							onShow(){
-								let from = webix.$$("dprt:combo"+cuid).getValue();
-								if (from == 1)
-									this.getList().filter(obj => obj.id == 2 || obj.id == "$empty");
-								else if (from == 2)
-									this.getList().filter(obj => obj.id == 10 || obj.id == "$empty");
-								else if (from == 4)
-									this.getList().filter(obj => obj.id == 3 || obj.id == "$empty");
-								else if (from == 5)
-									this.getList().filter(obj => obj.id == 7 || obj.id == "$empty");
-								else if (from == 6)
-									this.getList().filter(obj => obj.id == 9 || obj.id == "$empty");
-								else if (from == 7)
-									this.getList().filter(obj => obj.id == 3 || obj.id == 8 || obj.id == "$empty");
-								else if (from == 8)
-									this.getList().filter(obj => obj.id == 5 || obj.id == "$empty");
-								else if (from == 9)
-									this.getList().filter(obj => obj.id == 4 || obj.id == "$empty");
-								else if (from == 10)
-									this.getList().filter(obj => obj.id == 3 || obj.id == "$empty");
-							}
+							onShow:() => this.filterDestinations()
 						}
 					}
 				},
@@ -134,6 +92,53 @@ export default class SearchingFlightView extends JetView {
 				}
 			]
 		};
+	}
+	filterDepartures(){
+		const options = this.$$("dprt:combo").getList();
+		const to = this.$$("to:combo").getValue();
+
+		options.filter(obj => obj.id != 3);
+								
+		if (to == 2)
+			options.filter(obj => obj.id == 1 || obj.id == "$empty");
+		else if (to == 10)
+			options.filter(obj => obj.id == 2 || obj.id == "$empty");
+		else if (to == 3)
+			options.filter(obj => obj.id == 4 || obj.id == "$empty");
+		else if (to == 7)
+			options.filter(obj => obj.id == 5 || obj.id == "$empty");
+		else if (to == 9)
+			options.filter(obj => obj.id == 6 || obj.id == "$empty");
+		else if (to == 3 || to == 8)
+			options.filter(obj => obj.id == 7 || obj.id == "$empty");
+		else if (to == 5)
+			options.filter(obj => obj.id == 8 || obj.id == "$empty");
+		else if (to == 4)
+			options.filter(obj => obj.id == 9 || obj.id == "$empty");
+		else if (to == 3)
+			options.filter(obj => obj.id == 10 || obj.id == "$empty");
+	}
+	filterDestinations(){
+		const from = this.$$("dprt:combo").getValue();
+		const options = this.$$("to:combo").getList();
+		if (from == 1)
+			options.filter(obj => obj.id == 2 || obj.id == "$empty");
+		else if (from == 2)
+			options.filter(obj => obj.id == 10 || obj.id == "$empty");
+		else if (from == 4)
+			options.filter(obj => obj.id == 3 || obj.id == "$empty");
+		else if (from == 5)
+			options.filter(obj => obj.id == 7 || obj.id == "$empty");
+		else if (from == 6)
+			options.filter(obj => obj.id == 9 || obj.id == "$empty");
+		else if (from == 7)
+			options.filter(obj => obj.id == 3 || obj.id == 8 || obj.id == "$empty");
+		else if (from == 8)
+			options.filter(obj => obj.id == 5 || obj.id == "$empty");
+		else if (from == 9)
+			options.filter(obj => obj.id == 4 || obj.id == "$empty");
+		else if (from == 10)
+			options.filter(obj => obj.id == 3 || obj.id == "$empty");
 	}
 }
 	
