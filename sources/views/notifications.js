@@ -27,7 +27,7 @@ export default class NotificationsPopup extends JetView {
 					list.clearAll();
 					list.showOverlay(`<div style='margin:20px; font-size:14px;'>${_("No new notifications")}</div>`);
 					list.define({ height:80 });
-        			list.resize();
+					list.resize();
 					this.app.callEvent("read:notifications");
 				}
 			}
@@ -43,7 +43,7 @@ export default class NotificationsPopup extends JetView {
 			list.hideOverlay();
 			list.add(newNotification(),0);
 			list.define({ height:list.count()*104 });
-        	list.resize();
+			list.resize();
 		});
 	}
 	showPopup(pos){
