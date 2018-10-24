@@ -11,7 +11,7 @@ export default class RegularOffersView extends JetView {
 					localId:"all:flights",
 					select:true,
 					columns:[
-						{ id:"id", header:"#", width:80, sort:"int" },
+						{ id:"id", header:"#", width:40, sort:"int" },
 						{ id:"no", header:_("Number"), fillspace:1, sort:"string" },
 						{ id:"direction", header:_("Direction"), fillspace:3, sort:"string" },
 						{

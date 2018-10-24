@@ -11,14 +11,14 @@ export default class SpecialOffersView extends JetView {
 					localId:"datatable",
 					select:true,
 					columns:[
-						{ id:"id", header:"#", width:60, sort:"int" },
+						{ id:"id", header:"#", width:40, sort:"int" },
 						{ id:"direction", header:_("Direction"), fillspace:6, sort:"string" },
 						{
 							id:"date", header:_("Date"), fillspace:3, sort:"date",
 							format:webix.i18n.longDateFormatStr
 						},
 						{
-							id:"", header:"Time", fillspace:3, minWidth:126,
+							id:"time", header:"Time", fillspace:3, minWidth:126,
 							template:obj => obj.deptime + " <span class='webix_icon mdi mdi-arrow-right'></span> " + obj.arrtime
 						},
 						{
@@ -42,8 +42,23 @@ export default class SpecialOffersView extends JetView {
 							}
 						}
 					],
-					onClick:{
-						"book_flight":() => false
+					on:{
+						onResize(w){
+							if (w < 940 && this.getColumnIndex("time") !== -1 && this.getColumnIndex("places") !== -1){
+								this.hideColumn("time");
+								this.hideColumn("places");
+							}
+							else if (w >= 940 && this.getColumnIndex("time") === -1 && this.getColumnIndex("places") === -1){
+								this.showColumn("time");
+								this.showColumn("places");
+							}
+							if (w < 743 && this.getColumnIndex("save") !== -1){
+								this.hideColumn("save");
+							}
+							else if (w >= 743 && this.getColumnIndex("save") === -1){
+								this.showColumn("save");
+							}
+						}
 					}
 				}
 			]
