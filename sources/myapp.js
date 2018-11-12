@@ -9,7 +9,7 @@ export default class MyApp extends JetApp{
 			router 	: HashRouter,
 			debug 	: !PRODUCTION,
 			start 	: "/top/specialoffers",
-			theme	: webix.storage.local.get("theme_color") || ""
+			theme	: window.localStorage ? (webix.storage.local.get("theme_color") || "") : ""
 		};
 
 		super({ ...defaults, ...config });
