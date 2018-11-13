@@ -3,20 +3,34 @@ import { JetApp, HashRouter, plugins } from "webix-jet";
 
 export default class MyApp extends JetApp{
 	constructor(config){
+		let theme = "";
+		let cookies = true;
+		try {
+			theme = webix.storage.local.get("bank_app_theme");
+		}
+		catch(err){
+			cookies = false;
+			webix.message("You disabled cookies. The language and theme won't be restored after page reloads.","debug");
+		}
+
 		const defaults = {
 			id 		: APPNAME,
 			version : VERSION,
 			router 	: HashRouter,
 			debug 	: !PRODUCTION,
 			start 	: "/top/specialoffers",
-			theme	: window.localStorage ? (webix.storage.local.get("theme_color") || "") : ""
+			theme	: theme || ""
 		};
 
 		super({ ...defaults, ...config });
 
-		this.use(plugins.Locale);
+		let localeConfig = {};
+		if (cookies)
+			localeConfig.storage = webix.storage.local;
 
-		this.attachEvent("app:error:resolve", function(err, url) {
+		this.use(plugins.Locale,localeConfig);
+
+		this.attachEvent("app:error:resolve", function(err, url){
 			webix.delay(() => this.show("/top/specialoffers"));
 		});
 	}

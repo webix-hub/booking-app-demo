@@ -8,6 +8,8 @@ import "locales/webix/zh.js";
 
 export default class LanguagesPopup extends JetView {
 	config(){
+		const clang = this.app.getService("locale").getLang();
+
 		return {
 			view:"popup",
 			width:100,
@@ -34,8 +36,7 @@ export default class LanguagesPopup extends JetView {
 					}
 				},
 				ready(){
-					const clang = webix.storage.local.get("clang");
-					this.select(clang||"en");
+					this.select(clang);
 				}
 			}
 		};
@@ -48,7 +49,10 @@ export default class LanguagesPopup extends JetView {
 		const langs = this.app.getService("locale");
 		const clang = langs.getLang();
 		if (value !== clang){
-			webix.storage.local.put("clang",value);
+			try{
+				webix.storage.local.put("clang",value);
+			}
+			catch(err){/* if cookies are blocked */}
 			langs.setLang(value);
 		}
 	}
