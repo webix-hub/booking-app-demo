@@ -24,8 +24,8 @@ export default class TopView extends JetView{
 									margin:8,
 									cols:[
 										{
-											view:"label",
-											template:"Webix Booking App"
+											view:"label", css:"app_header",
+											label:"Webix Booking App"
 										},
 										{},
 										{
