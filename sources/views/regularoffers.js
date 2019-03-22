@@ -40,17 +40,20 @@ export default class RegularOffersView extends JetView {
 
 		this.on(this.app,"search:flight", (from,to,date) => {
 			grid.hideOverlay();
-			if (from || to || date)
+			if (from || to || date){
 				grid.filter(obj => {
 					const data_from = from ? obj.direction.indexOf(from) : 0;
 					const data_to = to ? obj.direction.indexOf(to) : 100;
-					const date_f = date ? obj.date.toString().slice(0,14) === date.toString().slice(0,14) : 1;
+					const date_f = date ? webix.Date.equal(obj.date, date) : true;
 					return data_from !== -1 && data_to !== -1 && data_from < data_to && date_f;
 				});
-			else
+			}
+			else {
 				grid.filter();
-			if (grid.count() === 0)
+			}
+			if (grid.count() === 0){
 				grid.showOverlay("Sorry, there are no flights for this route");
+			}
 		});
 	}
 }

@@ -21,18 +21,16 @@ export default class LanguagesPopup extends JetView {
 				borderless:true,
 				template:"#lang#",
 				data:[
-					{ id:"en", code:"US", lang:"English" },
-					{ id:"ko", code:"KR", lang:"한국어" },
-					{ id:"de", code:"DE", lang:"Deutsch" },
-					{ id:"zh", code:"CN", lang:"漢語" },
-					{ id:"es", code:"ES", lang:"Español" },
-					{ id:"ru", code:"RU", lang:"Русский" }
+					{ id:"en", lang:"English" },
+					{ id:"ko", lang:"한국어" },
+					{ id:"de", lang:"Deutsch" },
+					{ id:"zh", lang:"漢語" },
+					{ id:"es", lang:"Español" },
+					{ id:"ru", lang:"Русский" }
 				],
 				on:{
 					onAfterSelect:id => {
-						const code = this.getRoot().getBody().getItem(id).code;
-						this.toggleLanguage(id,code);
-						this.getRoot().hide();
+						this.toggleLanguage(id);
 					}
 				},
 				ready(){

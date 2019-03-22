@@ -1,4 +1,4 @@
-Webix Booking App (for the new Webix skin)
+Webix Booking App
 ===================
 
 A demo for booking flights and planning vacation.

@@ -15,7 +15,6 @@ export default class HotelsView extends JetView {
 							placeholder:_("Destination e.g. city, hotel name")
 						},
 						{
-							
 							view:"datepicker", label:_("Check In"),
 							value:new Date(), format:date_format
 						},

@@ -8,7 +8,7 @@ export default class TopView extends JetView{
 	config(){
 		const _ = this.app.getService("locale")._;
 		const theme = this.app.config.theme;
-		
+
 		return {
 			rows:[
 				{
@@ -23,8 +23,9 @@ export default class TopView extends JetView{
 								{
 									margin:8,
 									cols:[
+										{ width:4 },
 										{
-											view:"label", css:"app_header",
+											view:"label",
 											label:"Webix Booking App"
 										},
 										{},

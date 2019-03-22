@@ -3,7 +3,7 @@ import SearchingFlight from "views/searchingflight";
 import Hotels from "views/hotels";
 import Cars from "views/cars";
 import Registration from "views/registration";
-		
+
 export default class FlightSelectorView extends JetView {
 	config(){
 		const _ = this.app.getService("locale")._;

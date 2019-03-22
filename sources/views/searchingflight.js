@@ -34,7 +34,7 @@ export default class SearchingFlightView extends JetView {
 					view:"combo",
 					localId:"dprt:combo",
 					name:"departure_point",
-					label:_("From"), 
+					label:_("From"),
 					placeholder:_("Select departure point"),
 					options:{
 						data:cities,
@@ -61,7 +61,7 @@ export default class SearchingFlightView extends JetView {
 					localId:"depart:date",
 					name:"departure_date",
 					label:_("Departure"),
-					value:new Date(),
+					value:webix.Date.datePart(new Date()),
 					format:date_format
 				},
 				{
@@ -69,7 +69,7 @@ export default class SearchingFlightView extends JetView {
 					localId:"return:date",
 					name:"return_date",
 					label:_("Return"),
-					value:new Date(),
+					value:webix.Date.datePart(new Date()),
 					format:date_format,
 					hidden:true
 				},
@@ -98,7 +98,7 @@ export default class SearchingFlightView extends JetView {
 		const to = this.$$("to:combo").getValue();
 
 		options.filter(obj => obj.id != 3);
-								
+
 		if (to == 2)
 			options.filter(obj => obj.id == 1 || obj.id == "$empty");
 		else if (to == 10)
@@ -141,4 +141,3 @@ export default class SearchingFlightView extends JetView {
 			options.filter(obj => obj.id == 3 || obj.id == "$empty");
 	}
 }
-	
